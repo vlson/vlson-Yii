@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2018-07-13 15:44:40
+Date: 2018-07-16 11:07:40
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -46,6 +46,20 @@ CREATE TABLE `vlson_account_cat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
+-- Table structure for vlson_account_detail
+-- ----------------------------
+DROP TABLE IF EXISTS `vlson_account_detail`;
+CREATE TABLE `vlson_account_detail` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `account_id` int(11) NOT NULL COMMENT '通行证id',
+  `sex` tinyint(1) DEFAULT NULL COMMENT '性别',
+  `desciption` varchar(199) DEFAULT NULL COMMENT '用户简洁',
+  `address` varchar(199) DEFAULT NULL COMMENT '用户地址',
+  `birthday` date DEFAULT NULL COMMENT '生日',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
 -- Table structure for vlson_account_role
 -- ----------------------------
 DROP TABLE IF EXISTS `vlson_account_role`;
@@ -59,6 +73,20 @@ CREATE TABLE `vlson_account_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
+-- Table structure for vlson_account_system
+-- ----------------------------
+DROP TABLE IF EXISTS `vlson_account_system`;
+CREATE TABLE `vlson_account_system` (
+  `id` int(11) NOT NULL COMMENT '主键id',
+  `account_id` int(11) unsigned NOT NULL COMMENT '通行证id',
+  `system_id` int(11) unsigned NOT NULL COMMENT '系统id',
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '1' COMMENT '开通状态：0已开通，1未开通',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `update_time` datetime DEFAULT NULL COMMENT '状态更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
 -- Table structure for vlson_cats
 -- ----------------------------
 DROP TABLE IF EXISTS `vlson_cats`;
@@ -67,6 +95,21 @@ CREATE TABLE `vlson_cats` (
   `cat_name` varchar(30) NOT NULL COMMENT '分类名称',
   `create_at` datetime NOT NULL COMMENT '创建时间',
   PRIMARY KEY (`cat_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Table structure for vlson_comment
+-- ----------------------------
+DROP TABLE IF EXISTS `vlson_comment`;
+CREATE TABLE `vlson_comment` (
+  `comment_id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '评论主键id',
+  `post_id` int(11) unsigned NOT NULL COMMENT '文章id',
+  `content` varchar(250) NOT NULL COMMENT '评论内容',
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '评论状态：0正常，1已删除',
+  `account_id` int(11) NOT NULL COMMENT '评论人id',
+  `create_time` datetime NOT NULL COMMENT '评论时间',
+  `update_time` datetime NOT NULL COMMENT '评论更改时间',
+  PRIMARY KEY (`comment_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
@@ -102,6 +145,21 @@ CREATE TABLE `vlson_post_cat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='鏂囩珷鍜屾爣绛惧叧绯昏〃';
 
 -- ----------------------------
+-- Table structure for vlson_reply
+-- ----------------------------
+DROP TABLE IF EXISTS `vlson_reply`;
+CREATE TABLE `vlson_reply` (
+  `reply_id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '回复主键id',
+  `comment_id` int(11) NOT NULL COMMENT '回复的评论id',
+  `content` varchar(250) DEFAULT NULL COMMENT '回复内容',
+  `status` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '回复状态：0正常，1已删除',
+  `account_id` int(11) NOT NULL COMMENT '回复人id',
+  `create_time` datetime NOT NULL COMMENT '回复时间',
+  `update_time` datetime NOT NULL COMMENT '回复更改时间',
+  PRIMARY KEY (`reply_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
 -- Table structure for vlson_role
 -- ----------------------------
 DROP TABLE IF EXISTS `vlson_role`;
@@ -112,6 +170,19 @@ CREATE TABLE `vlson_role` (
   `create_at` datetime NOT NULL COMMENT '创建时间',
   `update_at` datetime DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Table structure for vlson_system
+-- ----------------------------
+DROP TABLE IF EXISTS `vlson_system`;
+CREATE TABLE `vlson_system` (
+  `system_id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `system_name` varchar(66) NOT NULL COMMENT '模块名称',
+  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '系统状态：0已开放，1未开放',
+  `create_time` datetime NOT NULL COMMENT '开通时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`system_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
