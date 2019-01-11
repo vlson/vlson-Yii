@@ -490,8 +490,8 @@ class BaseYii
     public static function powered()
     {
         return \Yii::t('yii', 'Powered by {yii}', [
-            'yii' => '<a href="http://www.yiiframework.com/" rel="external">' . \Yii::t('yii',
-                    'Yii Framework') . '</a>',
+            'yii' => \Yii::t('yii',
+                    'Yii Framework 2') . '</a>',
         ]);
     }
 
