@@ -1,12 +1,9 @@
 /*footer css*/
 .footer{
     width: 100%;
-    height: 45px;
     background-color: #222222;
     color: white;
-    position: absolute;
-    bottom: -11px;
 }
 .footer .container{
-    line-height: 46px;
+    line-height: 35px;
 }

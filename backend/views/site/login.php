@@ -47,7 +47,7 @@ LoginAsset::register($this);
                 </div>
                 <div class="form-group" style="margin-bottom: 35px">
                     <div class="col-sm-offset-2 col-sm-5">
-                        <input type="text" class="form-control" id="verificationCode" placeholder="暂时不设置验证码，请忽略！">
+                        <input type="text" class="form-control" id="verificationCode" placeholder="暂时不设置，请忽略！">
                     </div>
                     <div class="col-sm-3">
                         <input type="text" class="form-control" id="code" placeholder="验证码">
