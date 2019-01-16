@@ -3,6 +3,8 @@
     width: 100%;
     background-color: #222222;
     color: white;
+    position: absolute;
+    bottom: 0px;
 }
 .footer .container{
     line-height: 35px;

@@ -9,7 +9,6 @@ $this->title =  Yii::$app->params['appName'];
 LoginAsset::register($this);
 
 ?>
-<link rel="stylesheet" href="/css/login.css">
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html>
@@ -18,6 +17,7 @@ LoginAsset::register($this);
     <title>登陆</title>
     <meta name="keywords" content="登陆" />
     <meta nam="description" content="登陆" />
+    <?php $this->head() ?>
 </head>
 <body>
 <?php $this->beginBody() ?>

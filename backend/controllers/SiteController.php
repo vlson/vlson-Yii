@@ -78,7 +78,7 @@ class SiteController extends Controller
             return $this->goBack();
         } else {
             $model->password = '';
-
+            $this->layout=false;//不加载布局文件
             return $this->render('login', [
                 'model' => $model,
             ]);
