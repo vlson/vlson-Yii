@@ -65,6 +65,23 @@ class Account extends ActiveRecord implements IdentityInterface
         ];
     }
 
+    /*
+     * 指定对应字段的中文
+     * */
+    public function attributeLabels()
+    {
+            return [
+                'account_id'    =>  '通行证id',
+                'account_name'    =>  '通行证名称',
+                'email'    =>  '邮箱地址',
+                'mobile'    =>  '联系方式',
+                'status'    =>  '状态',
+                'created_at'    =>  '创建时间',
+                'updated_at'    =>  '更新时间',
+                'avatar'    =>  '头像地址',
+            ];
+    }
+
     /**
      * {@inheritdoc}
      */

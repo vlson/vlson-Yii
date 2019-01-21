@@ -43,7 +43,7 @@ CREATE TABLE `vlson_account_cat` (
   `create_at` datetime NOT NULL COMMENT '创建时间',
   `status` smallint(6) NOT NULL DEFAULT '0' COMMENT '状态',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for vlson_account_detail
@@ -57,7 +57,7 @@ CREATE TABLE `vlson_account_detail` (
   `address` varchar(199) DEFAULT NULL COMMENT '用户地址',
   `birthday` date DEFAULT NULL COMMENT '生日',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for vlson_account_role
@@ -70,7 +70,7 @@ CREATE TABLE `vlson_account_role` (
   `create_at` datetime NOT NULL COMMENT '创建时间',
   `update_at` datetime DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for vlson_account_system
@@ -84,7 +84,7 @@ CREATE TABLE `vlson_account_system` (
   `create_time` datetime NOT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '状态更新时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for vlson_cats
@@ -95,7 +95,7 @@ CREATE TABLE `vlson_cats` (
   `cat_name` varchar(30) NOT NULL COMMENT '分类名称',
   `create_at` datetime NOT NULL COMMENT '创建时间',
   PRIMARY KEY (`cat_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for vlson_comment
@@ -110,7 +110,7 @@ CREATE TABLE `vlson_comment` (
   `create_time` datetime NOT NULL COMMENT '评论时间',
   `update_time` datetime NOT NULL COMMENT '评论更改时间',
   PRIMARY KEY (`comment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Table structure for vlson_posts

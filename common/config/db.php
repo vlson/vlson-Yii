@@ -5,4 +5,5 @@ return [
 	'username'	=>	'root',
 	'password'	=>	'vlson_root',
 	'charset'	=>	'utf8',
+    'tablePrefix'   =>  'vlson_',
 ];
