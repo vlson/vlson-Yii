@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Role */
+/* @var $model app\models\Role */
 
 $this->title = 'Update Role: {nameAttribute}';
 $this->params['breadcrumbs'][] = ['label' => 'Roles', 'url' => ['index']];

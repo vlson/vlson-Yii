@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Account */
+/* @var $model common\models\Account */
 
 $this->title = 'Update Account: {nameAttribute}';
 $this->params['breadcrumbs'][] = ['label' => 'Accounts', 'url' => ['index']];

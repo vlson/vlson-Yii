@@ -10,6 +10,7 @@ return [
     'id' => 'app-backend',
     'name' => '微醺的自留地',
     'basePath' => dirname(__DIR__),
+    'language' => 'zh-CN',
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],

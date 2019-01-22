@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Node */
+/* @var $model app\models\Node */
 
 $this->title = 'Create Node';
 $this->params['breadcrumbs'][] = ['label' => 'Nodes', 'url' => ['index']];

@@ -1,9 +1,10 @@
 <?php
+
 namespace backend\controllers;
 
 use Yii;
 use common\models\Account;
-use backend\models\AccountSearch;
+use app\models\AccountSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

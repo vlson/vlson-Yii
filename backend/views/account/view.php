@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Account */
+/* @var $model common\models\Account */
 
 $this->title = $model->account_id;
 $this->params['breadcrumbs'][] = ['label' => 'Accounts', 'url' => ['index']];

@@ -8,62 +8,53 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="account-search" style="background-color: white">
-
-    <div class="box box-warning" style="border-top:3px solid #f39c12;border-bottom: 1px solid #f39c12;border-radius: 2px">
-        <div class="box-header with-border">
-            <h4 class="box-title">检索</h4>
-            <div class="glyphicon glyphicon-minus pull-right"></div>
+<div class="account-search">
+    <div class="panel panel-default">
+        <div class="panel-heading" style="padding: 10px 15px">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordion"
+                   href="#collapseTwo">
+                    点击检索
+                </a>
+            </h4>
         </div>
-    </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
 
-    <?php $form = ActiveForm::begin([
-        'action' => ['index'],
-        'method' => 'get',
-    ]); ?>
+                <?php $form = ActiveForm::begin([
+                    'action' => ['index'],
+                    'method' => 'get',
+                            ]); ?>
 
-    <div class=".container-fluid">
-        <div class="row">
-            <div class="col-xs-6 col-md-3">
                 <?= $form->field($model, 'account_id') ?>
-            </div>
 
-            <div class="col-xs-6 col-md-3">
-                <?= $form->field($model, 'account_name') ?>
-            </div>
+    <?= $form->field($model, 'account_name') ?>
 
-            <div class="col-xs-6 col-md-3">
-                <?= $form->field($model, 'email') ?>
-            </div>
-        </div>
+    <?= $form->field($model, 'auth_key') ?>
 
-        <div class="row">
-            <div class="col-xs-6 col-md-3">
-                <?= $form->field($model, 'mobile') ?>
-            </div>
+    <?= $form->field($model, 'password_hash') ?>
 
-            <div class="col-xs-6 col-md-3">
-                <?php  echo $form->field($model, 'status') ?>
-            </div>
+    <?= $form->field($model, 'password_reset_token') ?>
 
-            <div class="col-xs-6 col-md-3">
-                <?php  echo $form->field($model, 'created_at') ?>
-            </div>
-        </div>
+    <?php // echo $form->field($model, 'email') ?>
 
-        <div class="row">
-            <div class="col-xs-6 col-md-3">
-                <?php  echo $form->field($model, 'updated_at') ?>
-            </div>
+    <?php // echo $form->field($model, 'mobile') ?>
 
-            <?php  //echo $form->field($model, 'avatar') ?>
+    <?php // echo $form->field($model, 'status') ?>
+
+    <?php // echo $form->field($model, 'created_at') ?>
+
+    <?php // echo $form->field($model, 'updated_at') ?>
+
+    <?php // echo $form->field($model, 'avatar') ?>
+
+                <div class="form-group">
+                    <?= Html::submitButton('检索', ['class' => 'btn btn-primary']) ?>
+                    <?= Html::resetButton('重置', ['class' => 'btn btn-default']) ?>
+                </div>
         </div>
     </div>
-
-    <div class="form-group">
-            <?= Html::submitButton('Search', ['class' => 'btn btn-primary btn-block']) ?>
-            <?= Html::resetButton('Reset', ['class' => 'btn btn-default btn-block']) ?>
-    </div>
+</div>
 
     <?php ActiveForm::end(); ?>
 

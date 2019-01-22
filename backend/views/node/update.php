@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Node */
+/* @var $model app\models\Node */
 
 $this->title = 'Update Node: {nameAttribute}';
 $this->params['breadcrumbs'][] = ['label' => 'Nodes', 'url' => ['index']];
