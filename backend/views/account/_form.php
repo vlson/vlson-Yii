@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'password')->passwordInput() ?>
     <?= $form->field($model, 'email') ?>
     <?= $form->field($model, 'mobile')->textInput() ?>
-    <?= $form->field($model, 'status')->textInput() ?>
+    <?= $form->field($model, 'status')->dropDownList([1 => '正常 ', 0 => '已删除']) ?>
     <?= $form->field($model, 'avatar')->textInput() ?>
 
     <div class="form-group">
