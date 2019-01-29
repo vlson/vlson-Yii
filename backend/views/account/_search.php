@@ -28,25 +28,13 @@ use yii\widgets\ActiveForm;
 
                 <?= $form->field($model, 'account_id') ?>
 
-    <?= $form->field($model, 'account_name') ?>
+                <?= $form->field($model, 'account_name') ?>
 
-    <?= $form->field($model, 'auth_key') ?>
+                <?= $form->field($model, 'email') ?>
 
-    <?= $form->field($model, 'password_hash') ?>
+                <?= $form->field($model, 'mobile') ?>
 
-    <?= $form->field($model, 'password_reset_token') ?>
-
-    <?php // echo $form->field($model, 'email') ?>
-
-    <?php // echo $form->field($model, 'mobile') ?>
-
-    <?php // echo $form->field($model, 'status') ?>
-
-    <?php // echo $form->field($model, 'created_at') ?>
-
-    <?php // echo $form->field($model, 'updated_at') ?>
-
-    <?php // echo $form->field($model, 'avatar') ?>
+                <?= $form->field($model, 'status') ?>
 
                 <div class="form-group">
                     <?= Html::submitButton('检索', ['class' => 'btn btn-primary']) ?>

@@ -8,6 +8,7 @@ use app\models\AccountSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\SignupForm;
 
 /**
  * AccountController implements the CRUD actions for Account model.
@@ -58,16 +59,20 @@ class AccountController extends Controller
     }
 
     /**
-     * Creates a new Account model.
+     * Creates a new SignupForm model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Account();
+        $model = new SignupForm();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->account_id]);
+        if ($model->load(Yii::$app->request->post())) {
+            if ($user = $model->signup()) {
+                if (Yii::$app->getUser()->login($user)) {
+                    return $this->redirect(['view', 'id' => $user->account_id]);
+                }
+            }
         }
 
         return $this->render('create', [
@@ -104,9 +109,11 @@ class AccountController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
+        $model = $this->findModel($id);
+        $data = ['Account' => ['status' => 0]];
+        if ($model->load($data) && $model->save()) {
+            return $this->redirect(['index']);
+        }
     }
 
     /**

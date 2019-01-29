@@ -116,18 +116,17 @@ AppAsset::register($this);
 		<div class="sidebar-scroll">
 			<nav>
 				<ul class="nav">
-					<li><a href="index.html" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-					<li><a href="notifications.html" class=""><i class="lnr lnr-alarm"></i> <span>Notifications</span></a></li>
 					<li>
-						<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Pages</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-						<div id="subPages" class="collapse ">
+						<a href="#user" data-toggle="collapse" class="collapsed active"><i class="lnr lnr-users"></i> <span>用户管理</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+						<div id="user" class="collapse">
 							<ul class="nav">
-								<li><a href="page-profile.html" class="">Profile</a></li>
-								<li><a href="page-login.html" class="">Login</a></li>
-								<li><a href="page-lockscreen.html" class="">Lockscreen</a></li>
+								<li><a href="<?= Url::to(['account/index']) ?>" class="">通行证管理</a></li>
+								<li><a href="<?= Url::to(['role/index']) ?>" class="">角色管理</a></li>
+								<li><a href="<?= Url::to(['account-role/index']) ?>" class="">用户角色管理</a></li>
 							</ul>
 						</div>
 					</li>
+					<li><a href="" class=""><i class="lnr lnr-alarm"></i> <span>角色管理</span></a></li>
 				</ul>
 			</nav>
 		</div>
