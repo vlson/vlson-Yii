@@ -24,8 +24,7 @@ use yii\web\IdentityInterface;
 class Account extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
-    const STATUS_ACTIVE = 10;
-
+    const STATUS_ACTIVE = 1;
 
     /**
      * {@inheritdoc}
@@ -62,6 +61,18 @@ class Account extends ActiveRecord implements IdentityInterface
         return [
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
+
+            [['account_name', 'email', 'mobile', 'avatar'], 'trim'],
+            ['account_name', 'string', 'min' => 2, 'max' => 25],
+            ['account_name', 'unique', 'targetClass' => '\common\models\Account', 'message' => '该通行证已存在！'],
+
+            ['email', 'email'],
+            ['email', 'string', 'max' => 255],
+            ['email', 'unique', 'targetClass' => '\common\models\Account', 'message' => '该邮箱已存在！'],
+
+            ['mobile', 'number'],
+            ['mobile', 'match', 'pattern' => '/^[1][3456789][0-9]{9}$/', 'message' => '手机号码格式不正确！'],
+            ['mobile', 'unique', 'targetClass' => '\common\models\Account', 'message' => '该手机号码已存在！'],
         ];
     }
 

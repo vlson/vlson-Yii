@@ -90,12 +90,6 @@ class AccountController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
-//        var_dump(Yii::$app->request->post());
-//        var_dump($model->load(Yii::$app->request->post()));
-//        var_dump($model->attributes);
-//        var_dump($model->save());die;
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->account_id]);
         }
