@@ -41,11 +41,11 @@ class Role extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'role_id' => 'Role ID',
-            'role_code' => 'Role Code',
-            'role_name' => 'Role Name',
-            'status' => 'Status',
-            'remark' => 'Remark',
+            'role_id' => '角色ID',
+            'role_code' => '角色代号',
+            'role_name' => '角色名称',
+            'status' => '状态',
+            'remark' => '备注',
         ];
     }
 }

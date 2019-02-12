@@ -28,7 +28,7 @@ use yii\widgets\ActiveForm;
 
                 <?= $form->field($model, 'node_id') ?>
 
-    <?= $form->field($model, 'node_name') ?>
+    <?= $form->field($model, 'node_code') ?>
 
     <?= $form->field($model, 'node_title') ?>
 

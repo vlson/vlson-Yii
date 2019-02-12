@@ -70,8 +70,11 @@ class NodeController extends Controller
             return $this->redirect(['view', 'id' => $model->node_id]);
         }
 
+        //所有一级节点
+
         return $this->render('create', [
             'model' => $model,
+            'primary_node'=>$this->primaryNode(),
         ]);
     }
 
@@ -92,6 +95,7 @@ class NodeController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'primary_node'=>$this->primaryNode(),
         ]);
     }
 
@@ -123,5 +127,18 @@ class NodeController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    /*
+     * 列出一级节点
+     * */
+    protected function primaryNode(){
+        $primary_node_data = Node::find()->where(['p_id'=>0, 'status'=>1, 'level'=>1])->orderBy('sort')->select('node_title, node_id')->asArray()->all();
+        $primary_node_list = [];
+        foreach($primary_node_data as $value){
+            $primary_node_list[$value['node_id']] = $value['node_title'];
+        }
+        array_unshift($primary_node_list, '无');
+        return $primary_node_list;
     }
 }

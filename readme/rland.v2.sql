@@ -45,7 +45,7 @@ CREATE TABLE `vlson_role` (
 #权限节点表
 CREATE TABLE `vlson_node` (
 	`node_id` SMALLINT(6) UNSIGNED NOT NULL auto_increment,
-	`node_name` varchar(25) NOT NULL DEFAULT '' comment '节点名称',
+	`node_code` varchar(25) NOT NULL DEFAULT '' comment '节点名称',
 	`node_title` varchar(25) NOT NULL DEFAULT '' comment '节点标题',
 	`level` SMALLINT(3) UNSIGNED NOT NULL DEFAULT 1 comment '节点等级',
 	`p_id` SMALLINT(6) UNSIGNED NOT NULL DEFAULT 1 comment '父级节点',

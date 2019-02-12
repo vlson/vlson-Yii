@@ -19,7 +19,7 @@ class NodeSearch extends Node
     {
         return [
             [['node_id', 'level', 'p_id'], 'integer'],
-            [['node_name', 'node_title', 'sort', 'status', 'remark'], 'safe'],
+            [['node_code', 'node_title', 'sort', 'status', 'remark'], 'safe'],
         ];
     }
 
@@ -64,7 +64,7 @@ class NodeSearch extends Node
             'p_id' => $this->p_id,
         ]);
 
-        $query->andFilterWhere(['like', 'node_name', $this->node_name])
+        $query->andFilterWhere(['like', 'node_code', $this->node_code])
             ->andFilterWhere(['like', 'node_title', $this->node_title])
             ->andFilterWhere(['like', 'sort', $this->sort])
             ->andFilterWhere(['like', 'status', $this->status])

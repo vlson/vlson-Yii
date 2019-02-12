@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'role_name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
+    <?= $form->field($model, 'status')->dropDownList([1 => '正常 ', 0 => '已删除']) ?>
 
     <?= $form->field($model, 'remark')->textInput(['maxlength' => true]) ?>
 

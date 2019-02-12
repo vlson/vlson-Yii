@@ -7,13 +7,13 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\NodeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Nodes';
+$this->title = '权限节点管理';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="node-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
         <?= Html::a('Create Node', ['create'], ['class' => 'btn btn-info']) ?>
@@ -21,17 +21,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+        //'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
             'node_id',
-            'node_name',
+            'node_code',
             'node_title',
             'level',
             'p_id',
-            //'sort',
-            //'status',
+            'sort',
+            'status',
             //'remark',
 
             ['class' => 'yii\grid\ActionColumn'],
