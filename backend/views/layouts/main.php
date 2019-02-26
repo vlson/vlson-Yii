@@ -122,9 +122,7 @@ AppAsset::register($this);
 							<ul class="nav">
 								<li><a href="<?= Url::to(['account/index']) ?>" class="">通行证管理</a></li>
 								<li><a href="<?= Url::to(['role/index']) ?>" class="">角色管理</a></li>
-								<li><a href="<?= Url::to(['account-role/index']) ?>" class="">用户角色管理</a></li>
 								<li><a href="<?= Url::to(['node/index']) ?>" class="">权限节点管理</a></li>
-								<li><a href="<?= Url::to(['role-node/index']) ?>" class="">角色权限管理</a></li>
 							</ul>
 						</div>
 					</li>

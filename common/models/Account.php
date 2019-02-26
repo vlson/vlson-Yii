@@ -20,11 +20,14 @@ use yii\web\IdentityInterface;
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password write-only password
+ * @property string $role write-only role
  */
 class Account extends ActiveRecord implements IdentityInterface
 {
     const STATUS_DELETED = 0;
     const STATUS_ACTIVE = 1;
+
+    public $role;
 
     /**
      * {@inheritdoc}
@@ -62,7 +65,7 @@ class Account extends ActiveRecord implements IdentityInterface
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
 
-            [['account_name', 'email', 'mobile', 'avatar'], 'trim'],
+            [['account_name', 'email', 'mobile', 'avatar', 'role'], 'trim'],
             ['account_name', 'string', 'min' => 2, 'max' => 25],
             ['account_name', 'unique', 'targetClass' => '\common\models\Account', 'message' => '该通行证已存在！'],
 
@@ -73,6 +76,7 @@ class Account extends ActiveRecord implements IdentityInterface
             ['mobile', 'number'],
             ['mobile', 'match', 'pattern' => '/^[1][3456789][0-9]{9}$/', 'message' => '手机号码格式不正确！'],
             ['mobile', 'unique', 'targetClass' => '\common\models\Account', 'message' => '该手机号码已存在！'],
+
         ];
     }
 
@@ -90,6 +94,7 @@ class Account extends ActiveRecord implements IdentityInterface
                 'created_at'    =>  '创建时间',
                 'updated_at'    =>  '更新时间',
                 'avatar'    =>  '头像',
+                'role'    =>  '角色',
             ];
     }
 

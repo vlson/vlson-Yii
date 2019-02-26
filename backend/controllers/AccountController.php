@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use app\models\Role;
 use Yii;
 use common\models\Account;
 use app\models\AccountSearch;
@@ -75,8 +76,10 @@ class AccountController extends Controller
             }
         }
 
+        $this->allRole();
         return $this->render('create', [
             'model' => $model,
+            'role_arr' => $this->allRole(),
         ]);
     }
 
@@ -90,12 +93,14 @@ class AccountController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        //通行证所属角色
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->account_id]);
         }
 
         return $this->render('update', [
             'model' => $model,
+            'role_arr' => $this->allRole(),
         ]);
     }
 
@@ -129,5 +134,14 @@ class AccountController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    /*
+     * Finds All Role
+     * @return array
+     * */
+    protected function allRole(){
+        $role_arr = Role::find()->where(['status'=>1])->select('role_id, role_name')->asArray()->all();
+        return $role_arr;
     }
 }

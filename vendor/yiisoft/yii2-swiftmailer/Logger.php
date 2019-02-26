@@ -13,44 +13,22 @@ use Yii;
  * Logger is a SwiftMailer plugin, which allows passing of the SwiftMailer internal logs to the
  * Yii logging mechanism. Each native SwiftMailer log message will be converted into Yii 'info' log entry.
  *
- * This logger will be automatically created and applied to underlying [[\Swift_Mailer]] instance, if [[Mailer::$enableSwiftMailerLogging]]
- * is enabled. For example:
- *
- * ```php
- * [
- *     'components' => [
- *         'mailer' => [
- *             'class' => 'yii\swiftmailer\Mailer',
- *             'enableSwiftMailerLogging' => true,
- *         ],
- *      ],
- *     // ...
- * ],
- * ```
- *
- *
  * In order to catch logs written by this class, you need to setup a log route for 'yii\swiftmailer\Logger::add' category.
  * For example:
  *
- * ```php
- * [
- *     'components' => [
- *         'log' => [
- *             'targets' => [
- *                 [
- *                     'class' => 'yii\log\FileTarget',
- *                     'categories' => ['yii\swiftmailer\Logger::add'],
- *                 ],
- *             ],
+ * ~~~
+ * 'log' => [
+ *     'targets' => [
+ *         [
+ *             'class' => 'yii\log\FileTarget',
+ *             'categories' => ['yii\swiftmailer\Logger::add'],
  *         ],
- *         // ...
  *     ],
- *     // ...
  * ],
- * ```
+ * ~~~
  *
  * @author Paul Klimov <klimov.paul@gmail.com>
- * @since 2.0.4
+ * @since 2.0
  */
 class Logger implements \Swift_Plugins_Logger
 {
@@ -71,8 +49,10 @@ class Logger implements \Swift_Plugins_Logger
             case '!!':
                 $level = \yii\log\Logger::LEVEL_WARNING;
                 break;
-            default:
-                $level = \yii\log\Logger::LEVEL_INFO;
+        }
+
+        if (!isset($level)) {
+            $level = \yii\log\Logger::LEVEL_INFO;
         }
 
         Yii::getLogger()->log($entry, $level, __METHOD__);

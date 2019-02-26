@@ -283,7 +283,7 @@ class Message extends BaseMessage
      */
     public function attachContent($content, array $options = [])
     {
-        $attachment = new \Swift_Attachment($content);
+        $attachment = \Swift_Attachment::newInstance($content);
         if (!empty($options['fileName'])) {
             $attachment->setFilename($options['fileName']);
         }
@@ -316,7 +316,7 @@ class Message extends BaseMessage
      */
     public function embedContent($content, array $options = [])
     {
-        $embedFile = new \Swift_EmbeddedFile($content);
+        $embedFile = \Swift_EmbeddedFile::newInstance($content);
         if (!empty($options['fileName'])) {
             $embedFile->setFilename($options['fileName']);
         }

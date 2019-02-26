@@ -25,7 +25,6 @@ class AppAsset extends AssetBundle
     //默认自动加载js
     public $js = [
         'js/klorofil-common.js',
-        'https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js',
         'https://cdn.bootcss.com/twitter-bootstrap/4.1.0/js/bootstrap.min.js',
         'https://cdn.bootcss.com/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js',
         'https://cdn.bootcss.com/easy-pie-chart/2.1.6/jquery.easypiechart.min.js',

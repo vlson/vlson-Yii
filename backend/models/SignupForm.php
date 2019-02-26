@@ -15,6 +15,7 @@ class SignupForm extends Model
     public $mobile;
     public $status;
     public $avatar;
+    public $role;
 
 
     /**
@@ -57,6 +58,7 @@ class SignupForm extends Model
             'created_at'    =>  '创建时间',
             'updated_at'    =>  '更新时间',
             'avatar'    =>  '头像',
+            'role'      =>  '角色',
         ];
     }
 
@@ -76,6 +78,8 @@ class SignupForm extends Model
         $Account->mobile = $this->mobile;
         $Account->setPassword($this->password);
         $Account->generateAuthKey();
+
+        $Account
 
         return $Account->save() ? $Account : null;
     }
