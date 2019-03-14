@@ -64,14 +64,22 @@ class AdminController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Admin();
+        $Admin = new Admin();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if(Yii::$app->request->post()){
+            $admin = Yii::$app->request->post()['Admin'];
+            foreach($admin as $key=>$value){
+                $Admin[$key] = $value;
+            }
+            $Admin->setPassword($admin['password']);
+            $Admin->generateAuthKey();
+            if ($Admin->save()) {
+                return $this->redirect(['view', 'id' => $Admin->id]);
+            }
         }
 
         return $this->render('create', [
-            'model' => $model,
+            'model' => $Admin,
         ]);
     }
 
