@@ -5,6 +5,7 @@ namespace app\models;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
+use yii\web\IdentityInterface;
 
 /**
  * This is the model class for table "admin".
@@ -22,8 +23,11 @@ use yii\db\ActiveRecord;
  * @property string $updated_at
  * @property string $password write-only password
  */
-class Admin extends \yii\db\ActiveRecord
+class Admin extends ActiveRecord implements IdentityInterface
 {
+    const STATUS_DELETED = 0;
+    const STATUS_ACTIVE = 1;
+
     public $password;
 
     /**

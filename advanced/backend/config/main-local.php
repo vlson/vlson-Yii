@@ -6,6 +6,12 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '63lKpwclHLPKYiQyyEFfF5HJ6PHYwcp1',
         ],
+        'user' => [
+            //'class' => 'yii\web\User',
+            'identityClass' => 'app\models\Admin',
+            'enableAutoLogin'   => true,
+            'identityCookie'    =>  ['name' =>  '_identity-backend', 'httpOnly' =>  'true'],
+        ],
     ],
 ];
 
