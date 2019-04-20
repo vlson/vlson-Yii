@@ -4,79 +4,70 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
-use frontend\assets\AppAsset;
-use common\widgets\Alert;
+//use yii\bootstrap\Nav;
+//use yii\bootstrap\NavBar;
+//use yii\widgets\Breadcrumbs;
+use frontend\assets\IndexAsset;
+//use common\widgets\Alert;
 
-AppAsset::register($this);
+IndexAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
-<!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="<?= Yii::$app->language ?>"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="<?= Yii::$app->language ?>"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="<?= Yii::$app->language ?>"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="<?= Yii::$app->language ?>"> <!--<![endif]-->
 <head>
-    <meta charset="<?= Yii::$app->charset ?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
+    <meta name="keywords" content="微醺,结果集,微醺的结果集">
+    <meta name="description" content="微醺,结果集,微醺的结果集">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <?php $this->head() ?>
 </head>
-<body>
+<body style="background-color: black;">
+
 <?php $this->beginBody() ?>
+<div class="content">
+    <nav class="nav left-content">
+        <div class="burger burger--active">
+            <div class="burger__patty"></div>
+        </div>
 
-<div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => Yii::$app->name,
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
-    ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
-    }
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
-    ?>
+        <ul class="nav__list nav__list--active">
+            <li class="nav__item">
+                <a href="#1" class="nav__link c-blue"><img src="images/home-icon.png" class="menu-list" alt="主页" title="主页"></a>
+            </li>
+            <li class="nav__item">
+                <a href="#2" class="nav__link c-yellow scrolly"><img src="images/blog-icons.png" class="menu-list" alt="博客" title="博客"></a>
+            </li>
+            <li class="nav__item">
+                <a href="javascript:void(0);" class="nav__link c-red"><img src="images/shop-icon.png" class="menu-list" alt="商城" title="商城"></a>
+            </li>
+            <li class="nav__item">
+                <a href="javascript:void(0);" class="nav__link c-green"><img src="images/tools-icon.png" class="menu-list" alt="Little Tool" title="Little Tool"></a>
+            </li>
+            <li class="nav__item">
+                <a href="javascript:void(0);" class="nav__link c-green"><img src="images/wan-icon2.png" class="menu-list" alt="矩阵" title="矩阵"></a>
+            </li>
+        </ul>
+    </nav>
 
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
-    </div>
+    <?= $content ?>
+
+    <footer class="footer" style="background-color: #74787c">
+        <div class="container">
+            <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> Copyright &copy;  <?= date('Y') ?></p>
+
+            <p class="pull-right"><?= Yii::powered() ?></p>
+        </div>
+    </footer>
 </div>
-
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
-
 <?php $this->endBody() ?>
 </body>
 </html>
