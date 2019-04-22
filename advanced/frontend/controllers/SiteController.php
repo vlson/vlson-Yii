@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use linslin\yii2\curl\Curl;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\web\BadRequestHttpException;

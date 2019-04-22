@@ -1006,6 +1006,60 @@
         ]
     },
     {
+        "name": "linslin/yii2-curl",
+        "version": "1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/linslin/Yii2-Curl.git",
+            "reference": "734c40b520729c79af2937283864f8c999e86879"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/linslin/Yii2-Curl/zipball/734c40b520729c79af2937283864f8c999e86879",
+            "reference": "734c40b520729c79af2937283864f8c999e86879",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "ext-json": "*",
+            "yiisoft/yii2": "*"
+        },
+        "require-dev": {
+            "codeception/base": "^2.2.3",
+            "codeception/specify": "~0.4.3",
+            "codeception/verify": "~0.3.1",
+            "codeclimate/php-test-reporter": "dev-master",
+            "guzzlehttp/guzzle": ">=4.1.4 <7.0",
+            "mcustiel/phiremock-codeception-extension": "1.2.4"
+        },
+        "time": "2019-02-25T10:56:34+00:00",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "linslin\\yii2\\curl\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Nils Gajsek",
+                "email": "info@linslin.org"
+            }
+        ],
+        "description": "Easy and nice cURL extension with RESTful support for Yii2",
+        "keywords": [
+            " curl",
+            "extension",
+            "restful",
+            "yii2"
+        ]
+    },
+    {
         "name": "myclabs/deep-copy",
         "version": "1.8.1",
         "version_normalized": "1.8.1.0",
