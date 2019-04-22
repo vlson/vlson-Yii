@@ -12,8 +12,10 @@ class IndexAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
+        'css/flipTimer.css',
     ];
     public $js = [
+        'js/jquery.flipTimer.js',
     ];
     public $depends = [
         'frontend\assets\AppAsset',

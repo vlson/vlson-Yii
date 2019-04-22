@@ -1144,3 +1144,25 @@ body.lb-disable-scrolling {
 .menu-list{
   width: 31px;
 }
+
+/*插件容器样式*/
+.plugin-box{
+  position: absolute;
+  right: 1%;
+  top: 3%;
+}
+
+/*时钟插件样式*/
+.clock{
+  position: static;
+}
+
+/*天气插件样式*/
+.weather{
+  margin-top: 35px;
+  text-align: center;
+}
+.weather #weather-view-he{
+  margin: 0 auto !important;
+}
+

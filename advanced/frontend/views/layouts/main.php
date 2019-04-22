@@ -58,7 +58,7 @@ AppAsset::register($this);
 
     <footer class="footer" style="background-color: #74787c">
         <div class="container">
-            <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> Copyright &copy;  <?= date('Y') ?></p>
+            <p class="pull-left"><?= Html::encode(Yii::$app->name) ?> Copyright &copy;  <?= date('Y') ?></p>
 
             <p class="pull-right"><?= Yii::powered() ?></p>
         </div>
