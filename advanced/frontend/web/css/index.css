@@ -1166,3 +1166,41 @@ body.lb-disable-scrolling {
   margin: 0 auto !important;
 }
 
+/*资讯样式*/
+.news-box{
+  position: absolute;
+  left: 5%;
+  top: 3%;
+  width: 55%;
+  height: 94%;
+  overflow: hidden;
+}
+.news-box ul{
+  list-style: none;
+}
+.news-box ul li{
+  height: 70px;
+  margin-bottom: 30px;
+}
+.news-box .title{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: yellow;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.news-box .abstract{
+  color: silver;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp:2;  /* 设置行数 */
+  -webkit-box-orient: vertical;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.news-box .detail{
+  font-size: 12px;
+}

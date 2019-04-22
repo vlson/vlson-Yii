@@ -64,11 +64,16 @@ class SiteController extends PublicController{
      */
     public function actionIndex()
     {
-        $curl = new Curl();
         $news_api = "http://ic.snssdk.com/2/article/v25/stream/?count=20";
-        $news = $curl->get($news_api);
-        var_dump($news);die;
-        return $this->render('index');
+        $curl = new Curl();
+        $res = $curl->get($news_api);
+        $res = json_decode($res, true);
+        //var_dump($res['data'][0]);
+        $news = isset($res['data']) ? $res['data'] : array();
+
+        return $this->render('index', [
+            'news'  =>  array_slice($news, 0, 7),
+        ]);
     }
 
 }
