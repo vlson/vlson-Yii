@@ -21,7 +21,7 @@ $this->registerJs($js);
                     <li>
                         <div class="title"><a href="<?=$new['article_url']?>" target="_blank"><?=$new['title']?></a></div>
                         <div class="abstract"><?=$new['abstract']?></div>
-                        <div class="detail">媒体：<?=$new['media_name']?> · 阅读数：<?=$new['read_count']?></div>
+                        <div class="detail"><span class="media">媒体：<?=$new['media_name']?></span> · 阅读数：<?=$new['read_count']?></div>
                     </li>
                 <?php }?>
             </ul>
