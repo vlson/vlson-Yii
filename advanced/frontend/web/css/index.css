@@ -1166,55 +1166,6 @@ body.lb-disable-scrolling {
 .weather #weather-view-he{
   margin: 0 auto !important;
 }
-
-/*资讯样式*/
-.news-box{
-  position: absolute;
-  left: 5%;
-  top: 3%;
-  width: 55%;
-  height: 94%;
-  padding: 10px;
-  overflow: hidden;
-  border: 1px solid #20b2aa;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 8px;
-}
-.news-box ul{
-  list-style: none;
-}
-.news-box ul li{
-  height: 70px;
-  margin-bottom: 30px;
-}
-.news-box .title{
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: white !important;
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-.news-box .abstract{
-  color: gainsboro;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp:2;  /* 设置行数 */
-  -webkit-box-orient: vertical;
-  font-size: 14px;
-  margin-bottom: 5px;
-}
-.news-box .detail{
-  font-size: 12px;
-  color: silver;
-}
-.news-box .detail .media{
-  /*display: inline-block;*/
-  border-radius: 3px;
-  padding: 2px;
-  background-color: #008080;
-  color: #ffd700;
+body{
+  line-height: 0 !important;
 }

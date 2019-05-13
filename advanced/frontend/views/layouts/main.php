@@ -32,11 +32,11 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 <div class="content">
     <nav class="nav left-content">
-        <div class="burger burger--active">
+        <div class="burger">
             <div class="burger__patty"></div>
         </div>
 
-        <ul class="nav__list nav__list--active">
+        <ul class="nav__list">
             <li class="nav__item">
                 <a href="<?=Url::to(['site/index'])?>" class="nav__link c-blue"><img src="images/home-icon.png" class="menu-list" alt="主页" title="主页"></a>
             </li>
