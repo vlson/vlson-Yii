@@ -1,11 +1,17 @@
 <?php
 use yii\helpers\Url;
 use frontend\assets\BlogAsset;
+
+$this->title = "blog首页-微醺的结果集";
 BlogAsset::register($this);
 ?>
-
+<style>
+    .footer{
+        margin-left: 38.2%;
+    }
+</style>
 <div id="page">
-    <div id="fh5co-aside" style="background-image: url(images/blog-index/image_1.jpg)">
+    <div id="fh5co-aside" style="background-image: url(images/blog/image_1.jpg)">
         <div class="overlay"></div>
         <!--<nav role="navigation">
             <ul>
@@ -20,7 +26,7 @@ BlogAsset::register($this);
     <div id="fh5co-main-content">
         <div class="fh5co-post">
             <div class="fh5co-entry padding">
-                <img src="images/blog-index/project-1.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                <img src="images/blog/project-1.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
                 <div>
                     <span class="fh5co-post-date">October 12, 2016</span>
                     <h2><a href="single.html">How to be an effective web developer</a></h2>
@@ -29,7 +35,7 @@ BlogAsset::register($this);
             </div>
 
             <div class="fh5co-entry padding">
-                <img src="images/blog-index/project-3.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                <img src="images/blog/project-3.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
                 <div>
                     <span class="fh5co-post-date">October 12, 2016</span>
                     <h2><a href="single.html">How to be an effective web developer</a></h2>
@@ -38,7 +44,7 @@ BlogAsset::register($this);
             </div>
 
             <div class="fh5co-entry padding">
-                <img src="images/blog-index/project-4.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                <img src="images/blog/project-4.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
                 <div>
                     <span class="fh5co-post-date">October 12, 2016</span>
                     <h2><a href="single.html">How to be an effective web developer</a></h2>
@@ -47,7 +53,7 @@ BlogAsset::register($this);
             </div>
 
             <div class="fh5co-entry padding">
-                <img src="images/blog-index/project-4.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                <img src="images/blog/project-4.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
                 <div>
                     <span class="fh5co-post-date">October 12, 2016</span>
                     <h2><a href="single.html">How to be an effective web developer</a></h2>
@@ -56,7 +62,7 @@ BlogAsset::register($this);
             </div>
 
             <div class="fh5co-entry padding">
-                <img src="images/blog-index/project-4.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                <img src="images/blog/project-4.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
                 <div>
                     <span class="fh5co-post-date">October 12, 2016</span>
                     <h2><a href="single.html">How to be an effective web developer</a></h2>
@@ -65,7 +71,7 @@ BlogAsset::register($this);
             </div>
 
             <div class="fh5co-entry padding">
-                <img src="images/blog-index/project-4.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                <img src="images/blog/project-4.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
                 <div>
                     <span class="fh5co-post-date">October 12, 2016</span>
                     <h2><a href="single.html">How to be an effective web developer</a></h2>
@@ -74,7 +80,7 @@ BlogAsset::register($this);
             </div>
 
             <div class="fh5co-entry padding">
-                <img src="images/blog-index/project-4.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+                <img src="images/blog/project-4.jpg" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
                 <div>
                     <span class="fh5co-post-date">October 12, 2016</span>
                     <h2><a href="single.html">How to be an effective web developer</a></h2>

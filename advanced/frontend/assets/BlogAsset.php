@@ -19,6 +19,8 @@ class BlogAsset extends AssetBundle
         'https://cdn.bootcss.com/waypoints/4.0.1/jquery.waypoints.min.js',
         'https://cdn.bootcss.com/stellar.js/0.6.2/jquery.stellar.min.js',
         'js/blog.main.js',
+        'https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js',
+        'https://cdn.bootcss.com/jquery-easing/1.4.1/jquery.easing.min.js',
     ];
     public $depends = [
         'frontend\assets\AppAsset',

@@ -27,7 +27,7 @@ AppAsset::register($this);
 
     <?php $this->head() ?>
 </head>
-<body style="background-color: black;">
+<body>
 
 <?php $this->beginBody() ?>
 <div class="content">
@@ -38,24 +38,24 @@ AppAsset::register($this);
 
         <ul class="nav__list">
             <li class="nav__item">
-                <a href="#1" class="nav__link c-blue"><img src="images/home-icon.png" class="menu-list" alt="主页" title="主页"></a>
-                <a href="<?=Url::to(['site/index'])?>" class="nav__link c-blue"><img src="images/home-icon.png" class="menu-list" alt="主页" title="主页"></a>
+                <a href="#1" class="nav__link c-blue"><img src="/images/home-icon.png" class="menu-list" alt="主页" title="主页"></a>
+                <a href="<?=Url::to(['site/index'])?>" class="nav__link c-blue"><img src="/images/home-icon.png" class="menu-list" alt="主页" title="主页"></a>
             </li>
             <li class="nav__item">
-                <a href="#2" class="nav__link c-yellow scrolly"><img src="images/blog-icons.png" class="menu-list" alt="博客" title="博客"></a>
-                <a href="<?=Url::to(['blog/index'])?>" class="nav__link c-yellow scrolly"><img src="images/blog-icons.png" class="menu-list" alt="博客" title="博客"></a>
+                <a href="#2" class="nav__link c-yellow scrolly"><img src="/images/blog-icons.png" class="menu-list" alt="博客" title="博客"></a>
+                <a href="<?=Url::to(['blog/index'])?>" class="nav__link c-yellow scrolly"><img src="/images/blog-icons.png" class="menu-list" alt="博客" title="博客"></a>
             </li>
             <li class="nav__item">
-                <a href="javascript:void(0);" class="nav__link c-red"><img src="images/shop-icon.png" class="menu-list" alt="商城" title="商城"></a>
-                <a href="<?=Url::to(['shop/index'])?>" class="nav__link c-red"><img src="images/shop-icon.png" class="menu-list" alt="商城" title="商城"></a>
+                <a href="javascript:void(0);" class="nav__link c-red"><img src="/images/shop-icon.png" class="menu-list" alt="商城" title="商城"></a>
+                <a href="<?=Url::to(['shop/index'])?>" class="nav__link c-red"><img src="/images/shop-icon.png" class="menu-list" alt="商城" title="商城"></a>
             </li>
             <li class="nav__item">
-                <a href="javascript:void(0);" class="nav__link c-green"><img src="images/tools-icon.png" class="menu-list" alt="Little Tool" title="Little Tool"></a>
-                <a href="<?=Url::to(['tool/index'])?>" class="nav__link c-green"><img src="images/tools-icon.png" class="menu-list" alt="Little Tool" title="Little Tool"></a>
+                <a href="javascript:void(0);" class="nav__link c-green"><img src="/images/tools-icon.png" class="menu-list" alt="Little Tool" title="Little Tool"></a>
+                <a href="<?=Url::to(['tool/index'])?>" class="nav__link c-green"><img src="/images/tools-icon.png" class="menu-list" alt="Little Tool" title="Little Tool"></a>
             </li>
             <li class="nav__item">
-                <a href="javascript:void(0);" class="nav__link c-green"><img src="images/wan-icon2.png" class="menu-list" alt="矩阵" title="矩阵"></a>
-                <a href="<?=Url::to(['matrix/index'])?>" class="nav__link c-green"><img src="images/wan-icon2.png" class="menu-list" alt="矩阵" title="矩阵"></a>
+                <a href="javascript:void(0);" class="nav__link c-green"><img src="/images/wan-icon2.png" class="menu-list" alt="矩阵" title="矩阵"></a>
+                <a href="<?=Url::to(['matrix/index'])?>" class="nav__link c-green"><img src="/images/wan-icon2.png" class="menu-list" alt="矩阵" title="矩阵"></a>
             </li>
         </ul>
     </nav>
