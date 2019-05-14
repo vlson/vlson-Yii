@@ -72,7 +72,7 @@ class SiteController extends PublicController{
         $news = isset($res['data']) ? $res['data'] : array();
 
         return $this->render('index', [
-            'news'  =>  array_slice($news, 0, 7),
+            'news'  =>  array_slice($news, 0, 15),
         ]);
     }
 

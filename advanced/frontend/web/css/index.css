@@ -10,11 +10,12 @@ p {
 }
 
 a {
-	color: #ff6;
+	color: white;
 }
 
 a:hover {
 	color: #0CF;
+  text-decoration: none;
 }
 
 
