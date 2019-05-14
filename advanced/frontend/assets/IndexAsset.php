@@ -16,7 +16,6 @@ class IndexAsset extends AssetBundle
     ];
     public $js = [
         'js/jquery.flipTimer.js',
-        'js/index.main.js',
         'js/index.plugins.js',
     ];
     public $depends = [
