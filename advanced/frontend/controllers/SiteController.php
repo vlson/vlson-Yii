@@ -68,7 +68,6 @@ class SiteController extends PublicController{
         $curl = new Curl();
         $res = $curl->get($news_api);
         $res = json_decode($res, true);
-        //var_dump($res['data'][0]);
         $news = isset($res['data']) ? $res['data'] : array();
 
         return $this->render('index', [
