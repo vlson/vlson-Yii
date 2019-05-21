@@ -5,14 +5,13 @@ namespace backend\controllers;
 use Yii;
 use app\models\Admin;
 use app\models\AdminSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
  * AdminController implements the CRUD actions for Admin model.
  */
-class AdminController extends Controller
+class AdminController extends PublicController
 {
     /**
      * {@inheritdoc}
@@ -94,9 +93,17 @@ class AdminController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if(Yii::$app->request->isPost){
+            $password = Yii::$app->request->post()['Admin']['password'];
+            if ($model->load(Yii::$app->request->post())) {
+                $model->password_hash = Yii::$app->security->generatePasswordHash($password);
+                $model->auth_key = Yii::$app->security->generateRandomString();
+                $model->save();
+                return $this->redirect(['view', 'id' => $model->id]);
+            }
         }
+
+
 
         return $this->render('update', [
             'model' => $model,
