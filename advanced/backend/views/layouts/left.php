@@ -31,12 +31,11 @@
                 'options' => ['class' => 'sidebar-menu tree', 'data-widget'=> 'tree'],
                 'items' => [
                     //['label' => 'Menu Yii2', 'options' => ['class' => 'header']],
-                    ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
-                    //['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],
                     //['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
+                    //Tools
                     [
                         'label' => 'Some tools',
-                        'icon' => 'share',
+                        'icon' => 'cog',
                         'url' => '#',
                         'items' => [
                             ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii'],],
@@ -60,6 +59,11 @@
                             ],
                         ],
                     ],
+                    ['label' => '后台管理员', 'icon' => 'user-circle-o', 'url' => ['admin/index'], ],
+                    ['label' => '文章分类', 'icon' => 'list-alt', 'url' => ['category/index'], ],
+                    ['label' => '文章', 'icon' => 'file-o', 'url' => ['article/index'], ],
+                    ['label' => '点赞', 'icon' => 'thumbs-o-up', 'url' => ['like/index'], ],
+                    ['label' => '阅读', 'icon' => 'bookmark-o', 'url' => ['read/index'], ],
                 ],
             ]
         ) ?>
