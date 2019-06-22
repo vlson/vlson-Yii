@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model common\models\Read */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Reads', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => '阅读', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -32,9 +32,24 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'art_id',
             'ip',
-            'status',
-            'created_at',
-            'updated_at',
+            [
+                'attribute' =>  'status',
+                'value' =>  function($model){
+                    return ($model->status==1) ? '正常' : '已删除';
+                }
+            ],
+            [
+                'attribute' =>  'created_at',
+                'value' =>  function($model){
+                    return date("Y-m-d H:i:s", $model->created_at);
+                }
+            ],
+            [
+                'attribute' =>  'updated_at',
+                'value' =>  function($model){
+                    return date("Y-m-d H:i:s", $model->updated_at);
+                }
+            ],
         ],
     ]) ?>
 

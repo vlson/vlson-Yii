@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\LikeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Likes';
+$this->title = '点赞';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="like-index">
@@ -15,22 +15,32 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
     <?php echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
-        <?= Html::a('Create Like', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
             'art_id',
             'ip',
-            'status',
-            'created_at',
-            //'updated_at',
+            [
+                'attribute' =>  'status',
+                'value' =>  function($model){
+                    return ($model->status==1) ? '正常' : '已删除';
+                }
+            ],
+            [
+                'attribute' =>  'created_at',
+                'value' =>  function($model){
+                    return date("Y-m-d H:i:s", $model->created_at);
+                }
+            ],
+            [
+                'attribute' =>  'updated_at',
+                'value' =>  function($model){
+                    return date("Y-m-d H:i:s", $model->updated_at);
+                }
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

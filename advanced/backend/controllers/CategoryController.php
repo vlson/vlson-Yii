@@ -67,7 +67,7 @@ class CategoryController extends Controller
         $model = new Category();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['index']);
         }
 
         return $this->render('create', [
@@ -104,7 +104,14 @@ class CategoryController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        $model->status = 0;
+
+        if($model->save()){
+            return $this->redirect(['index']);
+        }else{
+            echo "<script>alert('删除失败，请重新操作');window.location.href='/category';</script>";
+        }
 
         return $this->redirect(['index']);
     }

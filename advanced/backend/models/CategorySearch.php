@@ -57,12 +57,16 @@ class CategorySearch extends Category
         }
 
         // grid filtering conditions
-        $query->andFilterWhere([
-            'id' => $this->id,
-            'status' => $this->status,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
-        ]);
+        if($this->id){
+            $query->andFilterWhere([
+                'id' => $this->id,
+            ]);
+        }
+        if($this->status && $this->status != 999){
+            $query->andFilterWhere([
+                'status' => $this->status,
+            ]);
+        }
 
         $query->andFilterWhere(['like', 'cate_name', $this->cate_name]);
 

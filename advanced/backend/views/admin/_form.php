@@ -18,14 +18,16 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'role')->textInput() ?>
+    <?php if($model->role === null){$model->role = 1;}?>
+    <?= $form->field($model, 'role')->dropDownList([1=>'管理员',2=>'超级管理员']) ?>
 
     <?= $form->field($model, 'mobile')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
+    <?php if($model->status === null){$model->status = 1;}?>
+    <?= $form->field($model, 'status')->radioList([0=>'已删除', 1=>'正常']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('保存', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

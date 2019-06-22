@@ -15,21 +15,34 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
+    <div class="box box-warning">
+        <div class="box-header with-border">
+            <h6 class="box-title">检索</h6>
+            <div class="box-tools pull-right">
+                <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            </div>
+        </div>
 
-    <?= $form->field($model, 'art_id') ?>
+        <div class="box-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <?= $form->field($model, 'id') ?></div>
 
-    <?= $form->field($model, 'ip') ?>
+                <div class="col-md-3">
+                    <?= $form->field($model, 'art_id') ?></div>
 
-    <?= $form->field($model, 'status') ?>
+                <div class="col-md-3">
+                    <?= $form->field($model, 'ip') ?></div>
 
-    <?= $form->field($model, 'created_at') ?>
+                <div class="col-md-3">
+                    <?= $form->field($model, 'status')->dropDownList([999=>'全部', 0=>'已删除', 1=>'正常']) ?></div>
+            </div>
 
-    <?php // echo $form->field($model, 'updated_at') ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
+            <div class="form-group">
+                <?= Html::submitButton('搜索', ['class' => 'btn btn-primary']) ?>
+                <?= Html::resetButton('重置', ['class' => 'btn btn-default']) ?>
+            </div>
+        </div>
     </div>
 
     <?php ActiveForm::end(); ?>

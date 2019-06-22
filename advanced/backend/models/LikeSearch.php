@@ -57,15 +57,25 @@ class LikeSearch extends Like
         }
 
         // grid filtering conditions
-        $query->andFilterWhere([
-            'id' => $this->id,
-            'art_id' => $this->art_id,
-            'status' => $this->status,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
-        ]);
+        if($this->id){
+            $query->andFilterWhere([
+                'id' => $this->id,
+            ]);
+        }
+        if($this->art_id){
+            $query->andFilterWhere([
+                'art_id' => $this->art_id,
+            ]);
+        }
+        if($this->status && $this->status != 999){
+            $query->andFilterWhere([
+                'status' => $this->status,
+            ]);
+        }
 
-        $query->andFilterWhere(['like', 'ip', $this->ip]);
+        if($this->ip){
+            $query->andFilterWhere(['like', 'ip', $this->ip]);
+        }
 
         return $dataProvider;
     }

@@ -62,7 +62,7 @@ class LikeController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreateBak()
     {
         $model = new Like();
 
@@ -82,7 +82,7 @@ class LikeController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id)
+    public function actionUpdateBak($id)
     {
         $model = $this->findModel($id);
 
@@ -104,9 +104,14 @@ class LikeController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        $model->status = 0;
 
-        return $this->redirect(['index']);
+        if($model->save()){
+            return $this->redirect(['index']);
+        }else{
+            echo "<script>alert('删除失败，请重新操作');window.location.href='/like';</script>";
+        }
     }
 
     /**

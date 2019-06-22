@@ -57,20 +57,31 @@ class AdminSearch extends Admin
         }
 
         // grid filtering conditions
-        $query->andFilterWhere([
-            'id' => $this->id,
-            'role' => $this->role,
-            'status' => $this->status,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
-        ]);
+        if($this->id){
+            $query->andFilterWhere([
+                'id' => $this->id,
+            ]);
+        }
+        if($this->role && $this->role != 999){
+            $query->andFilterWhere([
+                'role' => $this->role,
+            ]);
+        }
+        if($this->status && $this->status != 999){
+            $query->andFilterWhere([
+                'status' => $this->status,
+            ]);
+        }
 
-        $query->andFilterWhere(['like', 'username', $this->username])
-            ->andFilterWhere(['like', 'auth_key', $this->auth_key])
-            ->andFilterWhere(['like', 'password_hash', $this->password_hash])
-            ->andFilterWhere(['like', 'password_reset_token', $this->password_reset_token])
-            ->andFilterWhere(['like', 'email', $this->email])
-            ->andFilterWhere(['like', 'mobile', $this->mobile]);
+        if($this->username){
+            $query->andFilterWhere(['like', 'username', $this->username]);
+        }
+        if($this->email){
+            $query->andFilterWhere(['like', 'email', $this->email]);
+        }
+        if($this->mobile){
+            $query->andFilterWhere(['like', 'mobile', $this->mobile]);
+        }
 
         return $dataProvider;
     }

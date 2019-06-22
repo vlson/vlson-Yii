@@ -103,8 +103,6 @@ class AdminController extends PublicController
             }
         }
 
-
-
         return $this->render('update', [
             'model' => $model,
         ]);
@@ -119,9 +117,14 @@ class AdminController extends PublicController
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        $model->status = 0;
 
-        return $this->redirect(['index']);
+        if($model->save()){
+            return $this->redirect(['index']);
+        }else{
+            echo "<script>alert('删除失败，请重新操作');window.location.href='/admin';</script>";
+        }
     }
 
     /**

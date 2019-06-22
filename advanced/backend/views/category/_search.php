@@ -10,26 +10,40 @@ use yii\widgets\ActiveForm;
 
 <div class="category-search">
 
-    <?php $form = ActiveForm::begin([
-        'action' => ['index'],
-        'method' => 'get',
-    ]); ?>
+        <?php $form = ActiveForm::begin([
+            'action' => ['index'],
+            'method' => 'get',
+        ]); ?>
 
-    <?= $form->field($model, 'id') ?>
+        <div class="box box-warning">
+            <div class="box-header with-border">
+                <h6 class="box-title">检索</h6>
+                <div class="box-tools pull-right">
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                </div>
+            </div>
 
-    <?= $form->field($model, 'cate_name') ?>
+            <div class="box-body">
 
-    <?= $form->field($model, 'status') ?>
+                <div class="row">
+                    <div class="col-md-4">
+                    <?= $form->field($model, 'id') ?></div>
 
-    <?= $form->field($model, 'created_at') ?>
+                    <div class="col-md-4">
+                    <?= $form->field($model, 'cate_name') ?></div>
 
-    <?= $form->field($model, 'updated_at') ?>
+                    <div class="col-md-4">
+                    <?= $form->field($model, 'status')->dropDownList([999=>'全部', 0=>'已删除', 1=>'正常']) ?></div>
+                </div>
 
-    <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
-    </div>
+                <div class="form-group">
+                    <?= Html::submitButton('搜索', ['class' => 'btn btn-primary']) ?>
+                    <?= Html::resetButton('重置', ['class' => 'btn btn-default']) ?>
+                </div>
+            </div>
 
-    <?php ActiveForm::end(); ?>
+        </div>
+
+        <?php ActiveForm::end(); ?>
 
 </div>

@@ -16,8 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('修改', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('删除', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -31,9 +31,24 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'cate_name',
-            'status',
-            'created_at',
-            'updated_at',
+            [
+                'attribute' =>  'status',
+                'value' =>  function($model){
+                    return $model->status == 0 ? '已删除' : '正常';
+                }
+            ],
+            [
+                'attribute' =>  'created_at',
+                'value' =>  function($model){
+                    return date("Y-m-d H:i:s", $model->created_at);
+                }
+            ],
+            [
+                'attribute' =>  'updated_at',
+                'value' =>  function($model){
+                    return date("Y-m-d H:i:s", $model->updated_at);
+                }
+            ],
         ],
     ]) ?>
 

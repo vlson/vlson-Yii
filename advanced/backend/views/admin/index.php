@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\AdminSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Admins';
+$this->title = '系统管理员';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="admin-index">
@@ -16,28 +16,47 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Admin', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('添加管理员', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         //'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
+            //['class' => 'yii\grid\SerialColumn'],
             'id',
             'username',
-            // 'auth_key',
-            // 'password_hash',
-            // 'password_reset_token',
             'email:email',
-            'role',
+            [
+                'attribute' =>  'role',
+                'label' =>  '角色',
+                'value' =>  function($model){
+                    return ($model->role==1) ? '管理员' : '超级管理员';
+                }
+            ],
             'mobile',
-            'status',
-            'created_at',
-            'updated_at',
+            [
+                'attribute' =>  'status',
+                'value' =>  function($model){
+                    return ($model->status==1) ? '正常' : '已删除';
+                }
+            ],
+            [
+                'attribute' =>  'created_at',
+                'value' =>  function($model){
+                    return date("Y-m-d H:i:s", $model->created_at);
+                }
+            ],
+            [
+                'attribute' =>  'updated_at',
+                'value' =>  function($model){
+                    return date("Y-m-d H:i:s", $model->updated_at);
+                }
+            ],
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+            ],
         ],
     ]); ?>
 </div>
