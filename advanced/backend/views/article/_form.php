@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\markdown\MarkdownEditor;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Article */
@@ -16,20 +17,16 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'abstract')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'content')->widget(MarkdownEditor::className()) ?>
 
     <?= $form->field($model, 'cover')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'label')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
-
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'updated_at')->textInput() ?>
+    <?= $form->field($model, 'status')->textInput()->radioList([0=>'已删除', 1=>'正常']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('保存', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

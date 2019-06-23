@@ -57,7 +57,7 @@ class ReadSearch extends Read
         }
 
         // grid filtering conditions
-        if($this->id){
+        if(isset($this->id)){
             $query->andFilterWhere([
                 'id' => $this->id,
             ]);
@@ -67,13 +67,13 @@ class ReadSearch extends Read
                 'art_id' => $this->art_id,
             ]);
         }
-        if($this->status && $this->status != 999){
+        if(isset($this->status) && $this->status != 999){
             $query->andFilterWhere([
                 'status' => $this->status,
             ]);
         }
 
-        if($this->ip){
+        if(isset($this->ip)){
             $query->andFilterWhere(['like', 'ip', $this->ip]);
         }
 

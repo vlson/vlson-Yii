@@ -3,6 +3,8 @@
 namespace common\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "{{%v_article}}".
@@ -37,6 +39,24 @@ class Article extends \yii\db\ActiveRecord
             [['content'], 'required'],
             [['status', 'created_at', 'updated_at'], 'integer'],
             [['title', 'cover', 'label'], 'string', 'max' => 250],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function behaviors(){
+        return [
+            [
+                'class' =>  TimestampBehavior::className(),
+                'attributes'    =>  [
+                    //创建之前
+                    ActiveRecord::EVENT_BEFORE_INSERT  =>  ['created_at', 'updated_at'],
+                    //更新之前
+                    ActiveRecord::EVENT_BEFORE_UPDATE  =>  ['updated_at'],
+                ],
+                'value' =>  time(),
+            ]
         ];
     }
 

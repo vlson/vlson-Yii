@@ -3,6 +3,8 @@
 namespace common\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "{{%v_art_cate}}".
@@ -31,6 +33,24 @@ class ArtCate extends \yii\db\ActiveRecord
     {
         return [
             [['art_id', 'cate_id', 'status', 'created_at', 'updated_at'], 'integer'],
+        ];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function behaviors(){
+        return [
+            [
+                'class' =>  TimestampBehavior::className(),
+                'attributes'    =>  [
+                    //创建之前
+                    ActiveRecord::EVENT_BEFORE_INSERT  =>  ['created_at', 'updated_at'],
+                    //更新之前
+                    ActiveRecord::EVENT_BEFORE_UPDATE  =>  ['updated_at'],
+                ],
+                'value' =>  time(),
+            ]
         ];
     }
 

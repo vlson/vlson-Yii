@@ -12,15 +12,6 @@ return array (
       '@yii/swiftmailer' => $vendorDir . '/yiisoft/yii2-swiftmailer/src',
     ),
   ),
-  'yiisoft/yii2-bootstrap' => 
-  array (
-    'name' => 'yiisoft/yii2-bootstrap',
-    'version' => '2.0.9.0',
-    'alias' => 
-    array (
-      '@yii/bootstrap' => $vendorDir . '/yiisoft/yii2-bootstrap/src',
-    ),
-  ),
   'yiisoft/yii2-debug' => 
   array (
     'name' => 'yiisoft/yii2-debug',
@@ -82,6 +73,42 @@ return array (
     'alias' => 
     array (
       '@linslin/yii2/curl' => $vendorDir . '/linslin/yii2-curl',
+    ),
+  ),
+  'yiisoft/yii2-bootstrap' => 
+  array (
+    'name' => 'yiisoft/yii2-bootstrap',
+    'version' => '2.0.10.0',
+    'alias' => 
+    array (
+      '@yii/bootstrap' => $vendorDir . '/yiisoft/yii2-bootstrap/src',
+    ),
+  ),
+  'ijackua/yii2-lepture-markdown-editor-widget' => 
+  array (
+    'name' => 'ijackua/yii2-lepture-markdown-editor-widget',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@ijackua/lepture' => $vendorDir . '/ijackua/yii2-lepture-markdown-editor-widget',
+    ),
+  ),
+  'kartik-v/yii2-krajee-base' => 
+  array (
+    'name' => 'kartik-v/yii2-krajee-base',
+    'version' => '2.0.5.0',
+    'alias' => 
+    array (
+      '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base/src',
+    ),
+  ),
+  'kartik-v/yii2-markdown' => 
+  array (
+    'name' => 'kartik-v/yii2-markdown',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/markdown' => $vendorDir . '/kartik-v/yii2-markdown/src',
     ),
   ),
 );

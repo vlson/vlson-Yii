@@ -43,6 +43,15 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
         array (
             'linslin\\yii2\\curl\\' => 18,
         ),
+        'k' => 
+        array (
+            'kartik\\markdown\\' => 16,
+            'kartik\\base\\' => 12,
+        ),
+        'i' => 
+        array (
+            'ijackua\\lepture\\' => 16,
+        ),
         'd' => 
         array (
             'dmstr\\' => 6,
@@ -62,18 +71,24 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
             'Symfony\\Polyfill\\Intl\\Idn\\' => 26,
             'Symfony\\Polyfill\\Iconv\\' => 23,
             'Symfony\\Polyfill\\Ctype\\' => 23,
-            'Symfony\\Contracts\\' => 18,
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\DomCrawler\\' => 29,
+            'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\BrowserKit\\' => 29,
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
+            'Prophecy\\' => 9,
+        ),
+        'M' => 
+        array (
+            'Michelf\\' => 8,
         ),
         'G' => 
         array (
@@ -90,6 +105,7 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Common\\Lexer\\' => 22,
             'DeepCopy\\' => 9,
         ),
         'C' => 
@@ -143,6 +159,18 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
         array (
             0 => __DIR__ . '/..' . '/linslin/yii2-curl',
         ),
+        'kartik\\markdown\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-markdown/src',
+        ),
+        'kartik\\base\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base/src',
+        ),
+        'ijackua\\lepture\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ijackua/yii2-lepture-markdown-editor-widget',
+        ),
         'dmstr\\' => 
         array (
             0 => __DIR__ . '/..' . '/dmstr/yii2-adminlte-asset',
@@ -175,10 +203,6 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
-        'Symfony\\Contracts\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/contracts',
-        ),
         'Symfony\\Component\\Yaml\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
@@ -195,6 +219,10 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
         array (
             0 => __DIR__ . '/..' . '/symfony/dom-crawler',
         ),
+        'Symfony\\Component\\Debug\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/debug',
+        ),
         'Symfony\\Component\\CssSelector\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/css-selector',
@@ -207,9 +235,21 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
         array (
             0 => __DIR__ . '/..' . '/symfony/browser-kit',
         ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Prophecy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
+        ),
+        'Michelf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/michelf/php-markdown/Michelf',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
@@ -226,6 +266,10 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
+        ),
+        'Doctrine\\Common\\Lexer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer',
         ),
         'DeepCopy\\' => 
         array (
@@ -255,11 +299,11 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
                 0 => __DIR__ . '/..' . '/cebe/yii2-gravatar',
             ),
         ),
-        'P' => 
+        'M' => 
         array (
-            'Prophecy\\' => 
+            'Michelf' => 
             array (
-                0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
+                0 => __DIR__ . '/..' . '/michelf/php-smartypants',
             ),
         ),
         'H' => 
@@ -271,10 +315,6 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
         ),
         'D' => 
         array (
-            'Doctrine\\Common\\Lexer\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/doctrine/lexer/lib',
-            ),
             'Diff' => 
             array (
                 0 => __DIR__ . '/..' . '/phpspec/php-diff/lib',

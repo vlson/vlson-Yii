@@ -57,18 +57,20 @@ class ArticleSearch extends Article
         }
 
         // grid filtering conditions
-        $query->andFilterWhere([
-            'id' => $this->id,
-            'status' => $this->status,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
-        ]);
+        if(isset($this->id)){
+            $query->andFilterWhere([
+                'id' => $this->id,
+            ]);
+        }
+        if(isset($this->status) && $this->status != 999){
+            $query->andFilterWhere([
+                'status' => $this->status,
+            ]);
+        }
 
-        $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'abstract', $this->abstract])
-            ->andFilterWhere(['like', 'content', $this->content])
-            ->andFilterWhere(['like', 'cover', $this->cover])
-            ->andFilterWhere(['like', 'label', $this->label]);
+        if(isset($this->title)){
+            $query->andFilterWhere(['like', 'title', $this->title]);
+        }
 
         return $dataProvider;
     }

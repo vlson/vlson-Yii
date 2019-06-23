@@ -57,29 +57,29 @@ class AdminSearch extends Admin
         }
 
         // grid filtering conditions
-        if($this->id){
+        if(isset($this->id)){
             $query->andFilterWhere([
                 'id' => $this->id,
             ]);
         }
-        if($this->role && $this->role != 999){
+        if(isset($this->role) && $this->role != 999){
             $query->andFilterWhere([
                 'role' => $this->role,
             ]);
         }
-        if($this->status && $this->status != 999){
+        if(isset($this->status) && $this->status != 999){
             $query->andFilterWhere([
                 'status' => $this->status,
             ]);
         }
 
-        if($this->username){
+        if(isset($this->username)){
             $query->andFilterWhere(['like', 'username', $this->username]);
         }
-        if($this->email){
+        if(isset($this->email)){
             $query->andFilterWhere(['like', 'email', $this->email]);
         }
-        if($this->mobile){
+        if(isset($this->mobile)){
             $query->andFilterWhere(['like', 'mobile', $this->mobile]);
         }
 

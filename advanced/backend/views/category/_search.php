@@ -26,13 +26,13 @@ use yii\widgets\ActiveForm;
             <div class="box-body">
 
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                     <?= $form->field($model, 'id') ?></div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                     <?= $form->field($model, 'cate_name') ?></div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                     <?= $form->field($model, 'status')->dropDownList([999=>'全部', 0=>'已删除', 1=>'正常']) ?></div>
                 </div>
 

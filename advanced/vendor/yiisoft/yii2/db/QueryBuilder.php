@@ -685,7 +685,7 @@ class QueryBuilder extends \yii\base\BaseObject
     /**
      * Builds a SQL statement for creating a new DB table.
      *
-     * The columns in the new  table should be specified as name-definition pairs (e.g. 'name' => 'string'),
+     * The columns in the new table should be specified as name-definition pairs (e.g. 'name' => 'string'),
      * where name stands for a column name which will be properly quoted by the method, and definition
      * stands for the column type which can contain an abstract DB type.
      * The [[getColumnType()]] method will be invoked to convert any abstract type into a physical one.
@@ -1247,7 +1247,7 @@ class QueryBuilder extends \yii\base\BaseObject
             } elseif ($column instanceof Query) {
                 list($sql, $params) = $this->build($column, $params);
                 $columns[$i] = "($sql) AS " . $this->db->quoteColumnName($i);
-            } elseif (is_string($i)) {
+            } elseif (is_string($i) && $i !== $column) {
                 if (strpos($column, '(') === false) {
                     $column = $this->db->quoteColumnName($column);
                 }
