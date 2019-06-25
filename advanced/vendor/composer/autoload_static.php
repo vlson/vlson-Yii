@@ -31,6 +31,10 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
         ),
+        'x' => 
+        array (
+            'xutl\\bootstrap\\markdown\\' => 24,
+        ),
         'r' => 
         array (
             'rmrevin\\yii\\fontawesome\\' => 24,
@@ -144,6 +148,10 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
         'yii\\' => 
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
+        ),
+        'xutl\\bootstrap\\markdown\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/xutl/yii2-bootstrap-markdown-widget',
         ),
         'rmrevin\\yii\\fontawesome\\' => 
         array (

@@ -21,7 +21,6 @@
         "dmstr/yii2-adminlte-asset": "2.*",
         "linslin/yii2-curl": "*",
         "ijackua/yii2-lepture-markdown-editor-widget": "dev-master",
-        "kartik-v/yii2-markdown": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

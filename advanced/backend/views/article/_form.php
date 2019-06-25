@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use kartik\markdown\MarkdownEditor;
+use ijackua\lepture\Markdowneditor;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Article */
@@ -17,7 +17,7 @@ use kartik\markdown\MarkdownEditor;
 
     <?= $form->field($model, 'abstract')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'content')->widget(MarkdownEditor::className()) ?>
+    <?= $form->field($model, 'content')->widget(Markdowneditor::className()) ?>
 
     <?= $form->field($model, 'cover')->textInput(['maxlength' => true]) ?>
 

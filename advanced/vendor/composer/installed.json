@@ -3873,6 +3873,51 @@
         ]
     },
     {
+        "name": "xutl/yii2-bootstrap-markdown-widget",
+        "version": "1.0.3",
+        "version_normalized": "1.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/xutl/yii2-bootstrap-markdown-widget.git",
+            "reference": "f7335c5c6037420dd8cc0ae6997f1cad06a3185f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/xutl/yii2-bootstrap-markdown-widget/zipball/f7335c5c6037420dd8cc0ae6997f1cad06a3185f",
+            "reference": "f7335c5c6037420dd8cc0ae6997f1cad06a3185f",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0",
+            "yiisoft/yii2": "~2.0.6",
+            "yiisoft/yii2-bootstrap": "~2.0.0"
+        },
+        "time": "2017-07-30T03:54:10+00:00",
+        "type": "yii2-extension",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "xutl\\bootstrap\\markdown\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "XuTL",
+                "email": "xutl@gmail.com"
+            }
+        ],
+        "description": "The bootstrap markdown extension for the Yii framework",
+        "keywords": [
+            "bootstrap",
+            "markdown",
+            "yii2"
+        ]
+    },
+    {
         "name": "yiisoft/yii2",
         "version": "2.0.21",
         "version_normalized": "2.0.21.0",

@@ -111,4 +111,13 @@ return array (
       '@kartik/markdown' => $vendorDir . '/kartik-v/yii2-markdown/src',
     ),
   ),
+  'xutl/yii2-bootstrap-markdown-widget' => 
+  array (
+    'name' => 'xutl/yii2-bootstrap-markdown-widget',
+    'version' => '1.0.3.0',
+    'alias' => 
+    array (
+      '@xutl/bootstrap/markdown' => $vendorDir . '/xutl/yii2-bootstrap-markdown-widget',
+    ),
+  ),
 );
