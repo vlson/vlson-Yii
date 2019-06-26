@@ -1,0 +1,26 @@
+{
+  "name": "xutl/yii2-editor-md-widget",
+  "description": "The editor.md extension for the Yii framework",
+  "type": "yii2-extension",
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "editor.md",
+    "yii2",
+    "markdown"
+  ],
+  "authors": [
+    {
+      "name": "XuTL",
+      "email": "xutl@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "yiisoft/yii2": "~2.0.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "xutl\\editormd\\": ""
+    }
+  }
+}

@@ -93,15 +93,6 @@ return array (
       '@ijackua/lepture' => $vendorDir . '/ijackua/yii2-lepture-markdown-editor-widget',
     ),
   ),
-  'kartik-v/yii2-krajee-base' => 
-  array (
-    'name' => 'kartik-v/yii2-krajee-base',
-    'version' => '2.0.5.0',
-    'alias' => 
-    array (
-      '@kartik/base' => $vendorDir . '/kartik-v/yii2-krajee-base/src',
-    ),
-  ),
   'kartik-v/yii2-markdown' => 
   array (
     'name' => 'kartik-v/yii2-markdown',
@@ -118,6 +109,24 @@ return array (
     'alias' => 
     array (
       '@xutl/bootstrap/markdown' => $vendorDir . '/xutl/yii2-bootstrap-markdown-widget',
+    ),
+  ),
+  'xutl/yii2-bootstrap-datetimepicker-widget' => 
+  array (
+    'name' => 'xutl/yii2-bootstrap-datetimepicker-widget',
+    'version' => '1.0.1.0',
+    'alias' => 
+    array (
+      '@xutl/bootstrap/datetimepicker' => $vendorDir . '/xutl/yii2-bootstrap-datetimepicker-widget',
+    ),
+  ),
+  'xutl/yii2-editor-md-widget' => 
+  array (
+    'name' => 'xutl/yii2-editor-md-widget',
+    'version' => '1.0.2.0',
+    'alias' => 
+    array (
+      '@xutl/editormd' => $vendorDir . '/xutl/yii2-editor-md-widget',
     ),
   ),
 );

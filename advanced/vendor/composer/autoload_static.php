@@ -33,7 +33,9 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
         ),
         'x' => 
         array (
+            'xutl\\editormd\\' => 14,
             'xutl\\bootstrap\\markdown\\' => 24,
+            'xutl\\bootstrap\\datetimepicker\\' => 30,
         ),
         'r' => 
         array (
@@ -46,15 +48,6 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
         'l' => 
         array (
             'linslin\\yii2\\curl\\' => 18,
-        ),
-        'k' => 
-        array (
-            'kartik\\markdown\\' => 16,
-            'kartik\\base\\' => 12,
-        ),
-        'i' => 
-        array (
-            'ijackua\\lepture\\' => 16,
         ),
         'd' => 
         array (
@@ -89,10 +82,6 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Prophecy\\' => 9,
-        ),
-        'M' => 
-        array (
-            'Michelf\\' => 8,
         ),
         'G' => 
         array (
@@ -149,9 +138,17 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
         ),
+        'xutl\\editormd\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/xutl/yii2-editor-md-widget',
+        ),
         'xutl\\bootstrap\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/xutl/yii2-bootstrap-markdown-widget',
+        ),
+        'xutl\\bootstrap\\datetimepicker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/xutl/yii2-bootstrap-datetimepicker-widget',
         ),
         'rmrevin\\yii\\fontawesome\\' => 
         array (
@@ -166,18 +163,6 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
         'linslin\\yii2\\curl\\' => 
         array (
             0 => __DIR__ . '/..' . '/linslin/yii2-curl',
-        ),
-        'kartik\\markdown\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-markdown/src',
-        ),
-        'kartik\\base\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base/src',
-        ),
-        'ijackua\\lepture\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/ijackua/yii2-lepture-markdown-editor-widget',
         ),
         'dmstr\\' => 
         array (
@@ -255,10 +240,6 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
         array (
             0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
         ),
-        'Michelf\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/michelf/php-markdown/Michelf',
-        ),
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
@@ -305,13 +286,6 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
             'cebe\\gravatar\\' => 
             array (
                 0 => __DIR__ . '/..' . '/cebe/yii2-gravatar',
-            ),
-        ),
-        'M' => 
-        array (
-            'Michelf' => 
-            array (
-                0 => __DIR__ . '/..' . '/michelf/php-smartypants',
             ),
         ),
         'H' => 

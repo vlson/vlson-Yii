@@ -20,7 +20,9 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "dmstr/yii2-adminlte-asset": "2.*",
         "linslin/yii2-curl": "*",
-        "ijackua/yii2-lepture-markdown-editor-widget": "dev-master",
+        "xutl/yii2-bootstrap-markdown-widget": "^1.0",
+        "xutl/yii2-bootstrap-datetimepicker-widget": "^1.0",
+        "xutl/yii2-editor-md-widget": "^1.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5543fb8efe9c031a917c482ef750868d",
+    "content-hash": "022e3c02d5cbf26567972a6e0ebed9f4",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -521,162 +521,6 @@
             "time": "2016-10-24T15:52:54+00:00"
         },
         {
-            "name": "ijackua/yii2-lepture-markdown-editor-widget",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/iJackUA/yii2-lepture-markdown-editor-widget.git",
-                "reference": "de705a20bef6452666c5f6112308d46e5897d08f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/iJackUA/yii2-lepture-markdown-editor-widget/zipball/de705a20bef6452666c5f6112308d46e5897d08f",
-                "reference": "de705a20bef6452666c5f6112308d46e5897d08f",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "ijackua\\lepture\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Evgeniy Kuzminov",
-                    "email": "kyzminov@gmail.com",
-                    "homepage": "http://stdout.in"
-                }
-            ],
-            "description": "Yii2 widget for Lepture Markdown Editor (https://github.com/lepture/editor) - A markdown editor you really want",
-            "homepage": "https://github.com/iJackUA/yii2-lepture-markdown-editor-widget",
-            "keywords": [
-                "editor",
-                "extension",
-                "lepture",
-                "markdown",
-                "widget",
-                "yii"
-            ],
-            "abandoned": true,
-            "time": "2015-10-14T19:37:01+00:00"
-        },
-        {
-            "name": "kartik-v/yii2-krajee-base",
-            "version": "v2.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/yii2-krajee-base.git",
-                "reference": "9ddb662bdf49fdb671a90853912a40418a26a0dd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/9ddb662bdf49fdb671a90853912a40418a26a0dd",
-                "reference": "9ddb662bdf49fdb671a90853912a40418a26a0dd",
-                "shasum": ""
-            },
-            "suggest": {
-                "yiisoft/yii2-bootstrap": "for Krajee extensions to work with Bootstrap 3.x version",
-                "yiisoft/yii2-bootstrap4": "for Krajee extensions to work with Bootstrap 4.x version"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "kartik\\base\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "Base library and foundation components for all Yii2 Krajee extensions.",
-            "homepage": "https://github.com/kartik-v/yii2-krajee-base",
-            "keywords": [
-                "base",
-                "extension",
-                "foundation",
-                "krajee",
-                "widget",
-                "yii2"
-            ],
-            "time": "2019-03-13T17:14:54+00:00"
-        },
-        {
-            "name": "kartik-v/yii2-markdown",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/yii2-markdown.git",
-                "reference": "61e3db6b7964aa57a49bc0491a76616d8b9aea65"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-markdown/zipball/61e3db6b7964aa57a49bc0491a76616d8b9aea65",
-                "reference": "61e3db6b7964aa57a49bc0491a76616d8b9aea65",
-                "shasum": ""
-            },
-            "require": {
-                "kartik-v/yii2-krajee-base": ">=1.9",
-                "michelf/php-markdown": "~1.8",
-                "michelf/php-smartypants": "~1.8"
-            },
-            "type": "yii2-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.3.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "kartik\\markdown\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "Advanced Markdown editing and conversion utilities for Yii Framework 2.0",
-            "homepage": "https://github.com/kartik-v/yii2-markdown",
-            "keywords": [
-                "bootstrap",
-                "converter",
-                "editor",
-                "extension",
-                "form",
-                "input",
-                "jquery",
-                "markdown",
-                "yii",
-                "yii2"
-            ],
-            "time": "2019-05-25T07:25:32+00:00"
-        },
-        {
             "name": "linslin/yii2-curl",
             "version": "1.3.0",
             "source": {
@@ -727,102 +571,6 @@
                 "yii2"
             ],
             "time": "2019-02-25T10:56:34+00:00"
-        },
-        {
-            "name": "michelf/php-markdown",
-            "version": "1.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/michelf/php-markdown.git",
-                "reference": "01ab082b355bf188d907b9929cd99b2923053495"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/01ab082b355bf188d907b9929cd99b2923053495",
-                "reference": "01ab082b355bf188d907b9929cd99b2923053495",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Michelf\\": "Michelf/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Michel Fortin",
-                    "email": "michel.fortin@michelf.ca",
-                    "homepage": "https://michelf.ca/",
-                    "role": "Developer"
-                },
-                {
-                    "name": "John Gruber",
-                    "homepage": "https://daringfireball.net/"
-                }
-            ],
-            "description": "PHP Markdown",
-            "homepage": "https://michelf.ca/projects/php-markdown/",
-            "keywords": [
-                "markdown"
-            ],
-            "time": "2018-01-15T00:49:33+00:00"
-        },
-        {
-            "name": "michelf/php-smartypants",
-            "version": "1.8.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/michelf/php-smartypants.git",
-                "reference": "47d17c90a4dfd0ccf1f87e25c65e6c8012415aad"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/michelf/php-smartypants/zipball/47d17c90a4dfd0ccf1f87e25c65e6c8012415aad",
-                "reference": "47d17c90a4dfd0ccf1f87e25c65e6c8012415aad",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Michelf": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Michel Fortin",
-                    "email": "michel.fortin@michelf.ca",
-                    "homepage": "https://michelf.ca/",
-                    "role": "Developer"
-                },
-                {
-                    "name": "John Gruber",
-                    "homepage": "https://daringfireball.net/"
-                }
-            ],
-            "description": "PHP SmartyPants",
-            "homepage": "https://michelf.ca/projects/php-smartypants/",
-            "keywords": [
-                "dashes",
-                "quotes",
-                "spaces",
-                "typographer",
-                "typography"
-            ],
-            "time": "2016-12-13T01:01:17+00:00"
         },
         {
             "name": "rmrevin/yii2-fontawesome",
@@ -1174,6 +922,48 @@
             "time": "2019-02-06T07:57:58+00:00"
         },
         {
+            "name": "xutl/yii2-bootstrap-datetimepicker-widget",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xutl/yii2-bootstrap-datetimepicker-widget.git",
+                "reference": "8fad7f6629ceb32adc734b41728517bf1673556e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xutl/yii2-bootstrap-datetimepicker-widget/zipball/8fad7f6629ceb32adc734b41728517bf1673556e",
+                "reference": "8fad7f6629ceb32adc734b41728517bf1673556e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "xutl\\bootstrap\\datetimepicker\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "XuTL",
+                    "email": "xutl@gmail.com"
+                }
+            ],
+            "description": "The bootstrap datetimepicker extension for the Yii framework",
+            "keywords": [
+                "DateTimePicker",
+                "bootstrap",
+                "yii2"
+            ],
+            "time": "2017-04-12T12:01:29+00:00"
+        },
+        {
             "name": "xutl/yii2-bootstrap-markdown-widget",
             "version": "1.0.3",
             "source": {
@@ -1215,6 +1005,48 @@
                 "yii2"
             ],
             "time": "2017-07-30T03:54:10+00:00"
+        },
+        {
+            "name": "xutl/yii2-editor-md-widget",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/xutl/yii2-editor-md-widget.git",
+                "reference": "f4e4eaa5775dc17cc9a94422ec40f65a4b59cf79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/xutl/yii2-editor-md-widget/zipball/f4e4eaa5775dc17cc9a94422ec40f65a4b59cf79",
+                "reference": "f4e4eaa5775dc17cc9a94422ec40f65a4b59cf79",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "~2.0.6"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "xutl\\editormd\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "XuTL",
+                    "email": "xutl@gmail.com"
+                }
+            ],
+            "description": "The editor.md extension for the Yii framework",
+            "keywords": [
+                "editor.md",
+                "markdown",
+                "yii2"
+            ],
+            "time": "2017-09-18T08:50:30+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -4189,10 +4021,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "ijackua/yii2-lepture-markdown-editor-widget": 20,
-        "kartik-v/yii2-markdown": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

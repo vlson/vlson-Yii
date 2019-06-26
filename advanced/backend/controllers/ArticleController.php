@@ -65,14 +65,28 @@ class ArticleController extends Controller
     public function actionCreate()
     {
         $model = new Article();
+        $post = Yii::$app->request->post();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if (Yii::$app->request->isPost && !empty($post)) {
+            $url = Yii::$app->urlManager->createAbsoluteUrl(['article/index']);
+            $model->load($post);
+            if($post['Editorw1-html-code']){
+                $model->content_html = $post['Editorw1-html-code'];
+            }
+
+            if(!$model->validate()){
+                echo "<script>alert('填写字段信息错误!');window.location.href='$url';</script>";
+                die;
+            }
+            if($model->save()){
+                return $this->redirect(['index']);
+            }
+            echo "<script>alert('添加数据失败!');window.location.href='$url';</script>";die;
+        }else{
+            return $this->render('create', [
+                'model' => $model,
+            ]);
         }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
     }
 
     /**

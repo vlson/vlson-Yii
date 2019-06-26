@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-use ijackua\lepture\Markdowneditor;
+use common\widgets\MarkdownEditor;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Article */
@@ -17,12 +17,13 @@ use ijackua\lepture\Markdowneditor;
 
     <?= $form->field($model, 'abstract')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'content')->widget(Markdowneditor::className()) ?>
+    <?= $form->field($model, 'content')->widget(MarkdownEditor::className(),[]) ?>
 
     <?= $form->field($model, 'cover')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'label')->textInput(['maxlength' => true]) ?>
 
+    <?php $model->status = $model->isNewRecord ? 1 : $model->status;?>
     <?= $form->field($model, 'status')->textInput()->radioList([0=>'已删除', 1=>'正常']) ?>
 
     <div class="form-group">

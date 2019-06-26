@@ -13,6 +13,7 @@ use yii\db\ActiveRecord;
  * @property string $title 文章标题
  * @property string $abstract 文章简介
  * @property string $content 文章内容
+ * @property string $content_html 文章内容html
  * @property string $cover 封面
  * @property string $label 文章标签
  * @property int $status 文章状态：0已删除，1正常
@@ -35,8 +36,7 @@ class Article extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['abstract', 'content'], 'string'],
-            [['content'], 'required'],
+            [['abstract', 'content', 'content_html'], 'string'],
             [['status', 'created_at', 'updated_at'], 'integer'],
             [['title', 'cover', 'label'], 'string', 'max' => 250],
         ];
@@ -70,6 +70,7 @@ class Article extends \yii\db\ActiveRecord
             'title' => '文章标题',
             'abstract' => '文章简介',
             'content' => '文章内容',
+            'content_html' => '文章内容html',
             'cover' => '封面',
             'label' => '文章标签',
             'status' => '文章状态',
