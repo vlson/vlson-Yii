@@ -22,7 +22,8 @@
         "linslin/yii2-curl": "*",
         "xutl/yii2-bootstrap-markdown-widget": "^1.0",
         "xutl/yii2-bootstrap-datetimepicker-widget": "^1.0",
-        "xutl/yii2-editor-md-widget": "^1.0"
+        "xutl/yii2-editor-md-widget": "^1.0",
+        "kartik-v/yii2-widget-fileinput": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

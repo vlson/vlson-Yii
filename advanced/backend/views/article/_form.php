@@ -19,7 +19,9 @@ use common\widgets\MarkdownEditor;
 
     <?= $form->field($model, 'content')->widget(MarkdownEditor::className(),[]) ?>
 
-    <?= $form->field($model, 'cover')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'cover')->widget(\common\widgets\UploadInputWidget::className(), [
+        'options' => ['accept' => 'image/*'],
+    ]) ?>
 
     <?= $form->field($model, 'label')->textInput(['maxlength' => true]) ?>
 

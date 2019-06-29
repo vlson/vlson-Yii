@@ -43,12 +43,13 @@ EOT;
         $this->view->registerJs(self::JS);
         $backend_label = \yii::$app->params['backend_label'];//上傳圖片路徑
 
-        $this->clientOptions = array_merge([
+        $this->clientOptions = array_merge($this->clientOptions, [
             'saveHTMLToTextarea' => true,
             'preview' => true,
             'imageUpload' => true,
+            'watch' => true,
             'imageFormats' => ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
-            'imageUploadURL' => "/{$backend_label}/file/upload",
+            'imageUploadURL' => "/file/upload",
             'toolbarIcons' => [
                 "undo", "redo", "|",
                 "bold", "italic", "quote", "h2", "|",
@@ -56,7 +57,7 @@ EOT;
                 "list-ul", "list-ol", "hr", "|",
                 "watch", "preview", "fullscreen", "|",
                 "help", "info"],
-        ], $this->clientOptions);
+        ]);
         parent::run();
     }
 }
