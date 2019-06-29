@@ -27,4 +27,9 @@ return [
         'checkExtensionByMimeType'=>false,
         'maxSize'       => 1024*1024*1024
     ],
+    //aliyunOSS 存储
+    'aliyun_accessKeyId'    =>  'LTAIE79OO4sZmYFi',
+    'aliyun_accessKeySecret'=>  'kAXEFpLNiv2GkwFwHSwjfaoTnIsY5a',
+    'aliyun_endpoint'   =>  'http://oss-cn-beijing.aliyuncs.com',
+    'aliyun_bucket'    =>  'vlson',
 ];

@@ -13,6 +13,7 @@ use PHPUnit\Framework\Exception;
 use yii\web\Controller;
 use yii\web\UploadedFile;
 use Yii;
+use common\widgets\Storage;
 
 /*
  * 文件上传控制器
@@ -54,15 +55,28 @@ class FileController extends Controller
             if (!$file_validator->validate($upload_object, $error)) {
                 throw new \Exception($error);
             }
+
             //上传文件
-            
+            $bucket = 'vlson';
+            $file_type = explode('/', $upload_object->type)[1];
+            $object = "vland/image/".md5('vlson_'.time()).".$file_type";
 
-
-
-
-
+            $info = Storage::uploadFile($bucket, $object, $upload_object->tempName);
+            $result=[
+                'code'=> $info['http_code'],
+                'success' => 1,
+                'msg'=>'ok',
+                'url' => $info['url'],
+                'data'=>[
+                    'url'       => $info['url'],
+                    'file_name' => $upload_object->name
+                ]
+            ];
         }catch (Exception $e){
-            var_dump('error');die;
+            $result['msg'] = $e->getMessage();
+            $result['message'] = $e->getMessage();
+            $result['data'] = $_FILES;
         }
+        return $result;
     }
 }

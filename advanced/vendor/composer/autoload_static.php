@@ -89,6 +89,10 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
             'Psr\\Http\\Message\\' => 17,
             'Prophecy\\' => 9,
         ),
+        'O' => 
+        array (
+            'OSS\\' => 4,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
@@ -257,6 +261,10 @@ class ComposerStaticInitb028ce79f68964bff3beac1bd5d0a246
         'Prophecy\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
+        ),
+        'OSS\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/aliyuncs/oss-sdk-php/src/OSS',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
