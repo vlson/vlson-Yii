@@ -9,6 +9,8 @@
 namespace frontend\controllers;
 
 
+use common\models\Article;
+
 class BlogController extends PublicController
 {
     /**
@@ -20,7 +22,16 @@ class BlogController extends PublicController
     }
 
     public function actionIndex(){
-        return $this->render('index');
+        $blog_list = Article::find()
+            ->select(['id', 'title', 'abstract', 'cover', 'label', 'created_at'])
+            ->where(['status'=>1])
+            ->orderBy(["created_at"=>SORT_DESC])
+            ->asArray()
+            ->all();
+
+        return $this->render('index', [
+            "blog_list"  =>  $blog_list,
+        ]);
     }
 
     public function actionArticle(){

@@ -118,9 +118,17 @@ class ArticleController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        if(!$model){
+            echo "<script>alert('删除失败，文章不存在！');window.location.href='/article';</script>";
+        }
 
-        return $this->redirect(['index']);
+        $model->status = 0;
+        if($model->save()){
+            return $this->redirect(['index']);
+        }else{
+            echo "<script>alert('删除失败，请重新操作');window.location.href='/admin';</script>";
+        }
     }
 
     /**

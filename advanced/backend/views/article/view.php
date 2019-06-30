@@ -33,6 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             'abstract:ntext',
             'content:ntext',
+            'content_html:ntext',
             'cover',
             'label',
             [
