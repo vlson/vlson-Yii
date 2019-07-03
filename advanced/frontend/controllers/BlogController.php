@@ -8,7 +8,7 @@
 
 namespace frontend\controllers;
 
-
+use Yii;
 use common\models\Article;
 
 class BlogController extends PublicController
@@ -27,6 +27,7 @@ class BlogController extends PublicController
             ->where(['status'=>1])
             ->orderBy(["created_at"=>SORT_DESC])
             ->asArray()
+            ->limit(5)
             ->all();
 
         return $this->render('index', [
@@ -35,6 +36,36 @@ class BlogController extends PublicController
     }
 
     public function actionArticle(){
-        return $this->render('article');
+        $id = Yii::$app->request->get('id');
+        $article = Article::find()
+            ->select(['id', 'title', 'abstract', 'content_html', 'cover', 'label', 'created_at'])
+            ->where(['id'=>$id, 'status'=>1])
+            ->asArray()
+            ->one();
+        if(!$article){
+            return $this->redirect(['index']);
+        }
+
+        $prev_art = Article::find()
+            ->select(['id', 'title', 'abstract', 'cover', 'created_at'])
+            ->where(['status'=>1])
+            ->andFilterWhere(['<', 'id', $id])
+            ->orderBy(['id'=>SORT_DESC])
+            ->asArray()
+            ->one();
+
+        $next_art = Article::find()
+            ->select(['id', 'title', 'abstract', 'cover', 'created_at'])
+            ->where(['status'=>1])
+            ->andFilterWhere(['>', 'id', $id])
+            ->orderBy(['id'=>SORT_ASC])
+            ->asArray()
+            ->one();
+
+        return $this->render('article', [
+            'article'   =>  $article,
+            'prev_art'   =>  $prev_art,
+            'next_art'   =>  $next_art,
+        ]);
     }
 }

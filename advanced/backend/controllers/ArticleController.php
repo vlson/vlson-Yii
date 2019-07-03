@@ -99,9 +99,20 @@ class ArticleController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $post = Yii::$app->request->post();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if (Yii::$app->request->isPost && !empty($post)) {
+            $model->load($post);
+            if($post['Editorw1-html-code']){
+                $model->content_html = $post['Editorw1-html-code'];
+            }
+
+            if($model->save()){
+                return $this->redirect(['index']);
+            }
+
+            $url = Yii::$app->urlManager->createAbsoluteUrl(['article/index']);
+            echo "<script>alert('添加数据失败!');window.location.href='$url';</script>";die;
         }
 
         return $this->render('update', [

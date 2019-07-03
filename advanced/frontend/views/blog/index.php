@@ -30,8 +30,8 @@ BlogAsset::register($this);
                     <img src="<?=$blog['cover']?>" alt="<?=$blog['title']?>">
                     <div>
                         <span class="fh5co-post-date"><?=date("Y年m月d日 H:i:s", $blog['created_at'])?></span>
-                        <h2><a href="<?=Url::to(['article', 'id'=>$blog['id']])?>"><?=$blog['title']?></a></h2>
-                        <p class="blog-abstract"><?=$blog['abstract']?></p>
+                        <h4><a href="<?=Url::to(['article', 'id'=>$blog['id']])?>"><?=$blog['title']?></a></h4>
+                        <p class="blog-abstract">简介：<?=$blog['abstract']?></p>
                     </div>
                 </div>
             <?php }?>
