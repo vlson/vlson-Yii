@@ -24,6 +24,7 @@ AppAsset::register($this);
     <meta name="keywords" content="微醺,结果集,微醺的结果集">
     <meta name="description" content="微醺,结果集,微醺的结果集">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="baidu-site-verification" content="9f9bf23270ff81d94bc94721f969d365"/>
 
     <?php $this->head() ?>
 </head>

@@ -63,6 +63,44 @@ BlogAsset::register($this);
         </span>
     </div>
 
+    <!--let's do share-->
+    <div class="bdsharebuttonbox" data-tag="share_1">
+        <!-- 此处添加展示按钮 -->
+        <a class="bds_mshare" data-cmd="mshare"></a>
+        <a class="bds_tsina" data-cmd="tsina"></a>
+        <a class="bds_sqq" data-cmd="sqq"></a>
+        <a class="bds_copy" data-cmd="copy"></a>
+        <a class="bds_more" data-cmd="more">更多</a>
+        <a class="bds_count" data-cmd="count"></a>
+    </div>
+    <script>
+        window._bd_share_config = {
+            "common":{
+                "bdText":"<?=$article['title']?>",
+                "bdDesc" : '<?=$article['abstract']?>',
+                "bdUrl" : '',
+                "bdPic" : '<?=$article['cover']?>',
+                "bdMini":"1",
+                "bdMiniList":["tsina","weixin","sqq","youdao","copy"],
+                "bdPic":"","bdStyle":"0","bdSize":"16"
+            },
+            "share" :{
+                //此处放置分享按钮设置
+                "tag" : "share_1",
+                "bdSize" : 32,
+            },
+            "slide":{
+                "type":"slide",
+                "bdImg":"5",
+                "bdPos":"right",
+                "bdTop":"100"
+            }
+        }
+
+        //以下为js加载部分
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
     <div class="fh5co-navigation">
         <div class="fh5co-cover prev fh5co-cover-sm" style="background-image: url(<?=$prev_art['cover']?>)">
             <div class="overlay"></div>
