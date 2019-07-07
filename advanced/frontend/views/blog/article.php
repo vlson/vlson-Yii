@@ -64,15 +64,6 @@ BlogAsset::register($this);
     </div>
 
     <!--let's do share-->
-    <div class="bdsharebuttonbox" data-tag="share_1">
-        <!-- 此处添加展示按钮 -->
-        <a class="bds_mshare" data-cmd="mshare"></a>
-        <a class="bds_tsina" data-cmd="tsina"></a>
-        <a class="bds_sqq" data-cmd="sqq"></a>
-        <a class="bds_copy" data-cmd="copy"></a>
-        <a class="bds_more" data-cmd="more">更多</a>
-        <a class="bds_count" data-cmd="count"></a>
-    </div>
     <script>
         window._bd_share_config = {
             "common":{
