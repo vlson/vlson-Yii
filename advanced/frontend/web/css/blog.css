@@ -475,7 +475,7 @@ footer {
 }
 
 .padding {
-  padding: 10px 35px;
+  padding: 10px 20px;
 }
 @media screen and (max-width: 768px) {
   .padding {
@@ -515,7 +515,7 @@ footer {
 .fh5co-post .fh5co-entry > div {
   width: 80%;
   float: left;
-  margin-right: 5%;
+  margin-right: 2%;
   margin-top: 0px;
 }
 .single .fh5co-post .fh5co-entry > div {
@@ -902,4 +902,37 @@ footer {
 .footer{
   padding: 15px;
 }
+
+.like{
+  float: left;
+  display: inline-block;
+  line-height: 100%;
+  height: 100%;
+  margin-top: 5%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+/*分页*/
+.unselectable {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.morelist {
+  position: relative;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 30px;
+  margin-left: 38.1966%;
+}
+.morelist li {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+  margin: 0 12px;
+  color: #969696;
+}
+
 /*# sourceMappingURL=style.css.map */

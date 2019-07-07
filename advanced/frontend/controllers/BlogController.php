@@ -8,8 +8,11 @@
 
 namespace frontend\controllers;
 
+use common\models\Like;
 use Yii;
 use common\models\Article;
+use yii\base\Response;
+use yii\data\Pagination;
 
 class BlogController extends PublicController
 {
@@ -22,23 +25,31 @@ class BlogController extends PublicController
     }
 
     public function actionIndex(){
-        $blog_list = Article::find()
-            ->select(['id', 'title', 'abstract', 'cover', 'label', 'created_at'])
-            ->where(['status'=>1])
-            ->orderBy(["created_at"=>SORT_DESC])
+        $query = Article::find()->where(['status'=>1])->orderBy(["created_at"=>SORT_DESC]);
+
+        //分页
+        $pagination = new Pagination([
+            'totalCount'    =>  $query->count(),
+            'defaultPageSize'   =>  10,
+        ]);
+
+        $blog_list = $query->select(['id', 'title', 'abstract', 'cover', 'read_num', 'like_num', 'label', 'created_at'])
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
             ->asArray()
-            ->limit(5)
             ->all();
+
 
         return $this->render('index', [
             "blog_list"  =>  $blog_list,
+            "pagination"  =>  $pagination,
         ]);
     }
 
     public function actionArticle(){
         $id = Yii::$app->request->get('id');
         $article = Article::find()
-            ->select(['id', 'title', 'abstract', 'content_html', 'cover', 'label', 'created_at'])
+            ->select(['id', 'title', 'abstract', 'content_html', 'cover', 'read_num', 'like_num', 'label', 'created_at'])
             ->where(['id'=>$id, 'status'=>1])
             ->asArray()
             ->one();
@@ -67,5 +78,39 @@ class BlogController extends PublicController
             'prev_art'   =>  $prev_art,
             'next_art'   =>  $next_art,
         ]);
+    }
+
+    public function actionLike(){
+        Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $likeModel = new Like();
+        $result = [
+            'flag'  =>  false,
+            'msg'   =>  'fail',
+        ];
+        $like_data['art_id'] = Yii::$app->request->post('art_id');
+        $like_data['ip'] = Yii::$app->request->userIP;
+        $like_data['status'] = 1;
+
+        $model = Like::find()
+            ->where($like_data)
+            ->all();
+        if($model){
+            $result['msg'] = '已点赞';
+            return $result;
+        }
+        if($likeModel->load(['like_form'=>$like_data], 'like_form') && $likeModel->validate()){
+            $likeModel->save();
+            $art_model = Article::find()
+                ->where(['id'=>$like_data['art_id'], 'status'=>1])
+                ->one();
+            $art_model->like_num += 1;
+            $art_model->save();
+            $result['flag'] = true;
+            $result['msg'] = 'success';
+            return $result;
+        }else{
+            $result['msg'] = '点赞失败';
+            return $result;
+        }
     }
 }

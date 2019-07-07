@@ -1,8 +1,10 @@
 <?php
 use yii\helpers\Url;
 use frontend\assets\BlogAsset;
+use common\service\Func;
 
 $this->title = $article['title']."-微醺的结果集";
+$this->registerCssFile('/css/article.css');
 BlogAsset::register($this);
 ?>
 
@@ -19,7 +21,10 @@ BlogAsset::register($this);
             </nav>
             <div class="page-title">
                 <img src="http://vlson.oss-cn-beijing.aliyuncs.com/vland/image/ac1fa5e58b17c591da4ce391bac85dc1.png" alt="Free HTML5 by FreeHTMl5.co">
-                <span><?=date("Y年m月d日 H时",$article['created_at'])?></span>
+                <span>
+                    <?=date("Y年m月d日 H时",$article['created_at'])?>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="fa fa-eye" aria-hidden="true" style="font-size: 13px">&nbsp;&nbsp;<?=$article['read_num']?></span>
+                </span>
                 <h2><?=$article['title']?></h2>
             </div>
         </div>
@@ -48,6 +53,14 @@ BlogAsset::register($this);
                 </div>
             </div>
         </div>
+    </div>
+
+    <!--I like it-->
+    <div class="like-event">
+        <span class="like" art_id="<?=$article['id']?>">
+            <i class="fa <?php if(Func::isLike($article['id'])){?>fa-heart<?php }else{?>fa-heart-o<?php }?>" aria-hidden="true"></i>
+            <span class="like-num"><?=$article['like_num']?></span>
+        </span>
     </div>
 
     <div class="fh5co-navigation">

@@ -1,0 +1,13 @@
+.like{
+    position: fixed;
+    bottom: 70%;
+    left: 50px;
+    height: 5% !important;
+    z-index: 998;
+    opacity: 1;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    color: red;
+    cursor: pointer;
+}

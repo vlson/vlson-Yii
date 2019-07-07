@@ -8,20 +8,20 @@
 
 namespace common\service;
 
+use common\models\Like;
 
 class Func{
-    public static function getIP(){
-        global $ip;
-        if (getenv("HTTP_CLIENT_IP")){
-            $ip = getenv("HTTP_CLIENT_IP");
-        }else if(getenv("HTTP_X_FORWARDED_FOR")){
-            $ip = getenv("HTTP_X_FORWARDED_FOR");
-        }else if(getenv("REMOTE_ADDR")){
-            $ip = getenv("REMOTE_ADDR");
-        }else{
-            $ip = "Unknow";
+    public static function isLike($art_id){
+        $ip = \Yii::$app->request->userIP;
+        $model = Like::find()
+            ->where(['ip'=>$ip, 'art_id'=>$art_id, 'status'=>1])
+            ->all();
+        if($model){
+            return true;
         }
-        return $ip;
+        return false;
     }
+
+
 
 }
