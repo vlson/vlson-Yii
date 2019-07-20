@@ -7,6 +7,7 @@ use frontend\assets\IndexAsset;
 IndexAsset::register($this);
 $this->title = '首页-微醺的结果集';
 
+$this->registerCssFile("/css/index-photo.css");
 $js = <<<JS
     $('.dowebok').flipTimer();
 JS;
@@ -15,14 +16,103 @@ $this->registerJs($js);
 <div class="right-content">
     <section class="panel b-green" style="background-image: url('images/index-bg.png');">
         <div class="show-box">
-            <canvas id="c"></canvas>
+            <div class="bg">
+                <div class="wrap">
+                    <img class="img" src="images/index-images/1.jpg" alt=""/>
+                    <img class="img" src="images/index-images/2.jpg" alt=""/>
+                    <img class="img" src="images/index-images/3.jpg" alt=""/>
+                    <img class="img" src="images/index-images/4.jpg" alt=""/>
+                    <img class="img" src="images/index-images/5.jpg" alt=""/>
+                    <img class="img" src="images/index-images/6.jpg" alt=""/>
+                    <img class="img" src="images/index-images/7.jpg" alt=""/>
+                    <img class="img" src="images/index-images/8.jpg" alt=""/>
+                    <img class="img" src="images/index-images/9.jpg" alt=""/>
+                    <img class="img" src="images/index-images/10.jpg" alt=""/>
+                    <img class="img" src="images/index-images/11.jpg" alt=""/>
+                    <img class="img" src="images/index-images/5.jpg" alt=""/>
+                </div>
+            </div>
             <script>
-                var b = document.body;
-                var c = document.getElementsByTagName('canvas')[0];
-                var a = c.getContext('2d');
-            </script>
-            <script>
-                eval('var M=Math,n=M.pow,i,E=2,F="rgba(233,61,109,",d=M.cos,z=M.sin,L=1,u=30,W=window,w=c.width=W.innerWidth,h=c.height=W.innerHeight,r=_1){return M.random()*2-1},y="px Arial",v="L",q="♥",X=w/2,Y=h/2,T=4,p=_1){var e=this;e.g=_1){e.x=X;e.y=Y;e.k=0;e.l=0;e.t=M.random()*19000;e.c=e.t};e.d=_1){a.fillStyle=F+(e.c/e.t)+")";a.fillText(q,e.x,e.y);e.c-=50;e.x+=e.k;e.y+=e.l;e.k=e.k+r();e.l=e.l+r();if(e.c<0||e.x>w||e.x<0||e.y>h||e.y<0){e.g()}};e.g()},A,B;a.textAlign="center";a.strokeStyle="#000";a.lineWidth=2;for(i=0;i<350;i++){M[i]=new p()}setInterval(_1){a.clearRect(0,0,w,h);a.font=u+y;X=(w/6*n(z(T),3)+w/2);Y=0.8*(-h/40*(13*d(T)-5*d(2*T)-2*d(3*T)-d(4*T))+h/2.3);T+=(z(T)+3)/99;for(i=0;i<350;i++){with(M[i]){A=(x/w-0.5)*2,B=-(y/h-0.5);if(L&&(A*A+2*n((B-0.5*n(M.abs(A),0.5)),2))>0.11){k=l=0}d()}}a.font=120+y;if(E>0.1){if(E<1){a.fillStyle=F+E+")";a.fillText("Click",w/2,h/2)}E-=0.02}a.fillStyle="#E93D6D";a.fillText(v,X,Y+u);a.strokeText(v,X,Y+u)},50);b.bgColor="#FFEFF2";c.onmouseup=_1){L=(L)?0:1}'.replace(/(_1)/g,'function('))
+                /*思路分析
+
+                 1.加载后让图片动态排序成3D圆效果
+                 安顺序分别调整图片的角度
+                 每张图片在Z方向前进一段距离，使得图片围成一个圈
+                 页面加载后，使用CSS3的过渡效果，过渡完成时间相同，每张图片的延迟时间按顺序延长，实现一张张跟着分别运动
+                 2.鼠标拖拽住图片，图片整体跟着左右上下旋转
+                 鼠标点击后
+                 鼠标移动
+                 鼠标松开
+                 松开后清除移动事件
+                 3.鼠标松开后，图片有惯性的效果
+                 最后一次的坐标差递减，绝对值无限接近0时就停下来
+                 使用计时器，当最后一次的坐标差绝对值小于0.1时，清除计时器
+                 */
+
+                var img = $('.img');
+                var wrap = $('.wrap')[0];
+                var bg =  $('.bg')[0];
+                var img_num = img.length;
+                var deg = 360 / img_num;
+                var rotateX = -20, rotateY = 0;//跟CSS样式对应，wrap模块的度数
+                var timer = null;
+                var resultX;//X坐标差
+                var resultY;//Y坐标差
+
+                window.onload = function () {
+                    Array.prototype.forEach.call(img, function (item, index) {
+                        item.style.cssText = 'transform:rotateY(' + deg * index + 'deg) translateZ(300px);transition: 1s ' + (img_num - index) * .1 + 's';
+                    });
+                    var text;
+                    console.log(text);
+                };
+
+                bg.onmousedown = function (ev) {
+                    var lastX = ev.clientX;//上一次鼠标的坐标X
+                    var lastY = ev.clientY;//上一次鼠标的坐标Y
+                    bg.onmousemove = function (ev) {
+                        var nowX = ev.clientX;//这次一次鼠标的坐标X
+                        var nowY = ev.clientY;//这次一次鼠标的坐标Y
+                        resultX = nowX - lastX;
+                        resultY = nowY - lastY;
+                        rotateX -= resultY * 0.1;
+                        rotateY += resultX * 0.1;
+                        wrap.style.cssText ="transform:rotateX("+rotateX+"deg) rotateY("+rotateY+"deg)";
+                        lastX = nowX;
+                        lastY = nowY;
+                    }
+                    bg.onmouseup = function (ev) {
+                        bg.onmousemove = null;
+                        if(timer){
+                            clearInterval(timer);
+                        }
+
+                        timer = setInterval(function(){
+                            resultX *= 0.9;//控制横向转圈圈的惯性速度，值越小速度越慢
+                            resultY *= 0.5;//控制纵向翻滚的惯性速度，值越小速度越慢
+                            rotateX -= resultY;
+                            rotateY += resultX;
+                            wrap.style.cssText ="transform:rotateX("+rotateX+"deg) rotateY("+rotateY+"deg)";
+                            if(Math.abs(resultX) < 0.1 && Math.abs(resultY) < 0.1 ){
+                                clearInterval(timer);
+                            }
+                        },1000 / 60);
+                    }
+                    return false;//消除默认拖拽效果
+                }
+                function $(item) {//封装一个简单获取节点的方法
+                    var first = item.substring(0, 1);
+                    var second = item.substring(1);
+                    switch (first) {
+                        case '.':
+                            return document.getElementsByClassName(second);
+                        case '#':
+                            return document.getElementById(second);
+                        default:
+                            console.error('符号识别失败！');
+                            return false;
+                    }
+                }
             </script>
         </div>
 

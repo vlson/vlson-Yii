@@ -39,7 +39,6 @@ class BlogController extends PublicController
             ->asArray()
             ->all();
 
-
         return $this->render('index', [
             "blog_list"  =>  $blog_list,
             "pagination"  =>  $pagination,
